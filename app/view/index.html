@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivaldi</title>
+    <link rel="stylesheet" href="./css/appbar.css">
+    <link rel="stylesheet" href="./css/body.css">
+    <link rel="stylesheet" href="./css/calculator.css">
+    <link rel="stylesheet" href="./css/modal.css">
+</head>
+<body>
+
+
+    <div id="modal-container">
+        <div id="screen"></div>
+        <div id="modal">
+            
+            <div class="item-operation-modal" action="eval">
+                <span>Evaluar</span>
+            </div>
+
+            <div class="item-operation-modal" action="simpli">
+                <span>Simplificar</span>
+            </div>
+
+            <div class="item-operation-modal" action="factor">
+                <span>Factorizar</span>
+            </div>
+
+            <div class="item-operation-modal" action="eval-limit">
+                <span>Resolver limite</span>
+            </div>
+
+            <div class="item-operation-modal" action="integrate">
+                <span>Integrar</span>
+            </div>
+
+            <div class="item-operation-modal" action="derivate">
+                <span>Derivar</span>
+            </div>
+
+            <div class="item-operation-modal" action="grapth">
+                <span>Graficar</span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="header-container">
+        <div id="container-text">
+            <div id="operation-box-container">
+                <math-field id="operation" style="font-size: 25px; "></math-field>
+            <div><span id="result"></span></div>
+            <div style="display: none;"><p id="list-storage"></p></div>
+        </div>
+    </div>
+
+
+    <div id="buttons-container">
+        <div id="buttons-functions-container">
+            <div>
+                <div id="item-container-options">
+                    <button class="btn-item">deg</button>
+                </div>
+                <div id="item-container">
+                    <button class="btn-item">f(x)</button>
+                    <button class="btn-item">log</button>
+                    <button renderValue="ln(" class="btn-item">ln</button>
+                    <button class="btn-item" renderValue="\int\placeholder{⬚}">
+                        <svg renderValue="\int\placeholder{⬚}" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.14354 31.7881C10.48 31.7881 11.6186 30.599 11.9744 27.8664L13.872 13.3431C14.0737 11.825 14.6785 11.1545 15.7815 11.1545C16.3033 11.1545 16.6829 11.2304 16.9201 11.2937V9.47192C16.5406 9.38337 16.1373 9.32011 15.6629 9.32011C13.3265 9.32011 12.1878 10.5093 11.8321 13.2419L9.93443 27.7652C9.7328 29.2833 9.12794 29.9538 8.02493 29.9538C7.50308 29.9538 7.12356 29.8779 6.88635 29.8146V31.6364C7.26588 31.7249 7.66913 31.7881 8.14354 31.7881Z" fill="black"/>
+                            <path d="M31.5428 16.8042H20.41V28.2474H31.5428V16.8042Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.7 0.51"/>
+                        </svg>
+                    </button>
+                    
+                    <button class="btn-item" renderValue="\lim_{⬚\to ⬚}">
+                        <svg renderValue="\lim_{⬚\to ⬚}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.2993 20.2667H12.5936V9.11066H11.2993V20.2667ZM15.3389 10.796C15.7927 10.796 16.1498 10.4172 16.1498 9.95335C16.1498 9.48174 15.7927 9.11066 15.3389 9.11066C14.8926 9.11066 14.5281 9.48174 14.5281 9.95335C14.5281 10.4172 14.8926 10.796 15.3389 10.796ZM14.6918 20.2667H15.9861V12.2263H14.6918V20.2667ZM18.0173 20.2667H19.3116V15.226C19.3116 14.1127 20.0554 13.2777 21.0819 13.2777C22.0416 13.2777 22.6664 13.9117 22.6664 14.878V20.2667H23.9608V15.1564C23.9608 14.0663 24.6823 13.2777 25.7088 13.2777C26.7279 13.2777 27.3156 13.9271 27.3156 15.0249V20.2667H28.6099V14.7157C28.6099 13.1232 27.6205 12.0871 26.0882 12.0871C25.0022 12.0871 24.0946 12.6592 23.6631 13.6179H23.6334C23.2987 12.6438 22.5176 12.0871 21.4613 12.0871C20.4199 12.0871 19.6314 12.6592 19.267 13.5096H19.2371V12.2263H18.0173V20.2667Z" fill="black"/>
+                            <path d="M13.7109 23.5387H6.60156V30.9276H13.7109V23.5387Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                            <path d="M32.8052 23.5387H25.6958V30.9276H32.8052V23.5387Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                            <path d="M23.1688 27.4573C23.2878 27.3335 23.2878 27.1331 23.1688 27.0094L21.2298 24.9941C21.1109 24.8705 20.9179 24.8705 20.7989 24.9941C20.6799 25.1179 20.6799 25.3184 20.7989 25.442L22.5224 27.2333L20.7989 29.0247C20.6799 29.1483 20.6799 29.3488 20.7989 29.4725C20.9179 29.5962 21.1109 29.5962 21.2298 29.4725L23.1688 27.4573ZM16.8596 27.55H22.9534V26.9167H16.8596V27.55Z" fill="black"/>
+                        </svg>                            
+                    </button>
+                </div>
+                <div id="item-container">
+                    <button class="btn-item" renderValue="sin(">sin</button>
+                    <button class="btn-item" renderValue="cos(">cos</button>
+                    <button class="btn-item" renderValue="tan(">tan</button>
+                    <button class="btn-item" renderValue="abs">
+                        <svg renderValue="abs" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0)">
+                                <path d="M24.4637 13.2099H13.5643V24.8359H24.4637V13.2099Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                <path d="M7.71948 9.30209V28.7492" stroke="#444444" stroke-width="2"/>
+                                <path d="M31.5002 9.29961V28.7467" stroke="#444444" stroke-width="2"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0">
+                                <rect width="38" height="38" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>                            
+                    </button>
+                    <button class="btn-item" renderValue="∞">
+                        <img renderValue="∞" src="../assets//infinit_icon.png" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="generic-buttons-container">
+            <div>
+                <div id="item-container">
+                    <button id="btn-item-back">C</button>
+                    <button class="btn-item" renderValue="^\placeholder{⬚}">
+                        <svg renderValue="^\placeholder{⬚}" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28.8209 8.13835H21.8849V15.5367H28.8209V8.13835Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                            <path d="M20.8948 18.2841H9.99542V29.9101H20.8948V18.2841Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                        </svg>
+                    </button>
+                    <button class="btn-item" renderValue="\%">%</button>
+                    <button class="btn-item" renderValue="\sqrt[⬚]{⬚}">
+                        <svg renderValue="\sqrt[⬚]{⬚}" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.94751 19.9662L10.6956 28.9148H12.7566L16.811 11.9362H20.101V10.4396H15.6498L11.7696 27.1602H11.6052L9.49571 19.9662H7.94751Z" fill="black"/>
+                            <path d="M29.2217 17.2191H18.3224V28.8451H29.2217V17.2191Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                            <path d="M15.6462 11.4483H30.1126" stroke="black" stroke-width="1.60149"/>
+                        </svg>
+                    </button>
+                    <button class="btn-item-opacity">÷</button>
+                </div>
+
+                <div id="item-container">
+                    <button class="btn-item" renderValue="!">
+                        <svg renderValue="!" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.4968 10.004L25.6362 21.9439H27.4476L27.5869 10.004H25.4968ZM26.5419 28.0004C27.2967 28.0004 27.8656 27.3812 27.8656 26.5885C27.8656 25.7834 27.2967 25.1765 26.5419 25.1765C25.7988 25.1765 25.2182 25.7834 25.2182 26.5885C25.2182 27.3812 25.7988 28.0004 26.5419 28.0004Z" fill="#444444"/>
+                            <path d="M20.8948 13.2125H9.99542V24.8385H20.8948V13.2125Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                        </svg>
+                    </button>
+                    <button class="btn-item">7</button>
+                    <button class="btn-item">8</button>
+                    <button class="btn-item">9</button>
+                    <button class="btn-item-opacity">×</button>
+                </div>
+
+                <div id="item-container">
+                    <button class="btn-item">π</button>
+                    <button class="btn-item">4</button>
+                    <button class="btn-item">5</button>
+                    <button class="btn-item">6</button>
+                    <button class="btn-item-opacity">-</button>
+                </div>
+
+                <div id="item-container">
+                    <button class="btn-item">e</button>
+                    <button class="btn-item">1</button>
+                    <button class="btn-item">2</button>
+                    <button class="btn-item">3</button>
+                    <button class="btn-item-opacity">-</button>
+                </div>
+
+                <div id="item-container">
+                    <button class="btn-item">(</button>
+                    <button class="btn-item">)</button>
+                    <button class="btn-item">0</button>
+                    <button class="btn-item">.</button>
+                    <button class="btn-item-opacity-equals" id="btn-item-opacity-equals">=</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="./js/keyNavigator.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="https://unpkg.com/mathlive/dist/mathlive.min.js"></script>
+
+</body>
+</html>
