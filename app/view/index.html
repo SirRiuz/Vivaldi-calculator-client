@@ -86,9 +86,9 @@
                     </button>
                 </div>
                 <div id="item-container">
-                    <button class="btn-item" renderValue="sin(">sin</button>
-                    <button class="btn-item" renderValue="cos(">cos</button>
-                    <button class="btn-item" renderValue="tan(">tan</button>
+                    <button class="btn-item" renderValue=" sin(">sin</button>
+                    <button class="btn-item" renderValue=" cos(">cos</button>
+                    <button class="btn-item" renderValue=" tan(">tan</button>
                     <button class="btn-item" renderValue="abs">
                         <svg renderValue="abs" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0)">
@@ -114,21 +114,21 @@
             <div>
                 <div id="item-container">
                     <button id="btn-item-back">C</button>
-                    <button class="btn-item" renderValue="^\placeholder{⬚}">
-                        <svg renderValue="^\placeholder{⬚}" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <button class="btn-item" renderValue="^⬚">
+                        <svg renderValue="^⬚" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M28.8209 8.13835H21.8849V15.5367H28.8209V8.13835Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
                             <path d="M20.8948 18.2841H9.99542V29.9101H20.8948V18.2841Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
                         </svg>
                     </button>
                     <button class="btn-item" renderValue="\%">%</button>
-                    <button class="btn-item" renderValue="\sqrt[⬚]{⬚}">
-                        <svg renderValue="\sqrt[⬚]{⬚}" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <button class="btn-item" renderValue="\sqrt{⬚}">
+                        <svg renderValue="\sqrt{⬚}" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.94751 19.9662L10.6956 28.9148H12.7566L16.811 11.9362H20.101V10.4396H15.6498L11.7696 27.1602H11.6052L9.49571 19.9662H7.94751Z" fill="black"/>
                             <path d="M29.2217 17.2191H18.3224V28.8451H29.2217V17.2191Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
                             <path d="M15.6462 11.4483H30.1126" stroke="black" stroke-width="1.60149"/>
                         </svg>
                     </button>
-                    <button class="btn-item-opacity">÷</button>
+                    <button class="btn-item-opacity" renderValue="\frac">÷</button>
                 </div>
 
                 <div id="item-container">
@@ -141,7 +141,7 @@
                     <button class="btn-item">7</button>
                     <button class="btn-item">8</button>
                     <button class="btn-item">9</button>
-                    <button class="btn-item-opacity">×</button>
+                    <button class="btn-item-opacity" renderValue="\cdot">×</button>
                 </div>
 
                 <div id="item-container">
@@ -149,7 +149,7 @@
                     <button class="btn-item">4</button>
                     <button class="btn-item">5</button>
                     <button class="btn-item">6</button>
-                    <button class="btn-item-opacity">-</button>
+                    <button class="btn-item-opacity">+</button>
                 </div>
 
                 <div id="item-container">
@@ -174,6 +174,7 @@
     </div>
 
 
+    <script src="./js/api.js"></script>
     <script src="./js/keyNavigator.js"></script>
     <script src="./js/modal.js"></script>
     <script src="https://unpkg.com/mathlive/dist/mathlive.min.js"></script>
