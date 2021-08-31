@@ -1,28 +1,45 @@
 
 
 
-const el = document.getElementById('modal-container')
+const el = document.getElementById('modal-container')   // Contexto del modal
 
 
 
 function getContext() {
+  /*
+    Obtiene el contexto del 
+    modal
+  */
   return el
 }
 
 function onCloseModal(ctx) {
+  /*
+    Esta funcion se encarga de cerrar
+    el modal
+  */
   ctx.style.display = 'none'
 }
 
 
 function onClickButonItem(ctx) {
+
+  /*
+    Esta funcion se encarga de gestionar
+    los eventos cuando se hace click en 
+    cualquier boton en el modal
+  */
+
   var itemList = document.getElementsByClassName('item-operation-modal')
   
   for(var x=0;x<=itemList.length;x++) {
     if(itemList[x] != undefined) {
       itemList[x].addEventListener('click',(e) => {
         if(e.target.attributes.action) {
-          alert(e.target.attributes.action.value)
           onCloseModal(ctx)
+          if(e.target.attributes.action.value == 'grapth'){
+            openGraphModal()
+          }
         }
       })
     }
@@ -32,6 +49,13 @@ function onClickButonItem(ctx) {
 
 
 function onBackScreen(ctx) {
+
+  /*
+    Esta funcion se encarga de cerrar
+    el modal al hacer click en el 
+    screen (Fondo tracero)
+  */
+
   const elScreen = document.getElementById('screen')
 
   elScreen.addEventListener('click',(e) => {
@@ -41,6 +65,9 @@ function onBackScreen(ctx) {
 
 
 function openModal(ctx) {
+
+  /* Se encarga de abrir el modal */
+  
   ctx.style.display = 'block'
 }
 

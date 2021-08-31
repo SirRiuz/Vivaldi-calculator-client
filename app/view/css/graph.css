@@ -1,0 +1,23 @@
+
+
+#grapth-canvas-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+}
+
+
+#modal-graph {
+    background: white;
+    border-radius: 8px;
+    width: 100%;
+    height: 510px;
+    z-index: 999;
+    position: absolute;
+    top: 15%;
+}
+
+
+

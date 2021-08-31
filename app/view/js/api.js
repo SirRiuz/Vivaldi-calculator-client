@@ -34,3 +34,30 @@ function onRequest(data,callback) {
 
 
 
+function onParseLatex(latexEpresion,callback) {
+
+  const url = 'http://127.0.0.1:8000/api/v1/latex-parser/'
+  var params = new FormData()
+  
+  params.append('latex',latexEpresion)
+
+  fetch(url,{
+    method:'POST',
+    body:params
+  })
+    .then(res => res.json())
+    .then(res => {
+      callback(res)
+    })
+
+    .catch(err => {
+      console.log('API ERROR')
+      console.log(err)
+    })
+
+    .catch(err => {
+      console.Console('Server error')
+    })
+}
+
+

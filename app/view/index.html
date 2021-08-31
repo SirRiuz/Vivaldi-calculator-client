@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vivaldi</title>
     <link rel="stylesheet" href="./css/appbar.css">
+    <link rel="stylesheet" href="./css/graph.css">
     <link rel="stylesheet" href="./css/body.css">
     <link rel="stylesheet" href="./css/calculator.css">
     <link rel="stylesheet" href="./css/modal.css">
 </head>
 <body>
+
+    <div id="grapth-canvas-modal">
+        <div id="screen"></div>
+        <div id="modal-graph"></div>
+    </div>
 
 
     <div id="modal-container">
@@ -44,7 +50,6 @@
             <div class="item-operation-modal" action="grapth">
                 <span>Graficar</span>
             </div>
-
         </div>
     </div>
 
@@ -173,11 +178,13 @@
 
     </div>
 
-
+    <script src="./js/grapthmodal.js"></script>
     <script src="./js/api.js"></script>
     <script src="./js/keyNavigator.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
     <script src="https://unpkg.com/mathlive/dist/mathlive.min.js"></script>
+    <script src="./js/graph.js"></script>
 
 </body>
 </html>
