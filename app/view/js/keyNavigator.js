@@ -22,7 +22,7 @@ function onClickButton() {
         }
         onRequest({
           latex:document.getElementById('operation').textContent,
-          operaton:'eval',
+          operation:'eval',
           mode:'deg'
         },(e) => {
           if(e.data.result.status == undefined) {
@@ -45,7 +45,7 @@ function onClickButton() {
 
         onRequest({
           latex:document.getElementById('operation').textContent,
-          operaton:'eval',
+          operation:'eval',
           mode:'deg'
         },(e) => {
           if(e.data.result.status == undefined) {
@@ -86,12 +86,12 @@ function onCalculate() {
 
       onRequest({
         latex:document.getElementById('operation').textContent,
-        operaton:'eval',
+        operation:'eval',
         mode:'deg'
       },(e) => {
         if(e.data.result.status == undefined) {
           document.getElementById('operation').innerText = e.data.result
-          document.getElementById('result').innerText = ''
+          document.getElementById('result').innerText = 'Borra'
         } else {
           if(e.data.result['type-error'] == 'syntax.error') {
             document.getElementById('operation').innerText = 'Error_en_la_sintaxis'

@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="./css/body.css">
     <link rel="stylesheet" href="./css/calculator.css">
     <link rel="stylesheet" href="./css/modal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
 
@@ -35,7 +38,7 @@
                 <span>Factorizar</span>
             </div>
 
-            <div class="item-operation-modal" action="eval-limit">
+            <div class="item-operation-modal" action="limit">
                 <span>Resolver limite</span>
             </div>
 
@@ -56,10 +59,17 @@
 
     <div id="header-container">
         <div id="container-text">
+
             <div id="operation-box-container">
-                <math-field id="operation" style="font-size: 25px; "></math-field>
-            <div><span id="result"></span></div>
-            <div style="display: none;"><p id="list-storage"></p></div>
+                <div><math-field id="operation" style="font-size: 25px; "></math-field></div>
+                <div></div>
+            </div>
+
+            <div id="result-container">
+                <div><math-field id="result" style="font-size: 25px;"></math-field></div>
+                <div></div>
+            </div>
+
         </div>
     </div>
 

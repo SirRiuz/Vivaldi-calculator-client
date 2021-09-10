@@ -13,6 +13,12 @@ function onRequest(data,callback) {
   var params = new FormData()
 
   params.append('latex',data.latex)
+  params.append('operation',data.operation)
+
+
+  console.log(data)
+
+
 
   fetch(url,{
     method:'POST',
@@ -25,6 +31,7 @@ function onRequest(data,callback) {
 
     .catch(err => {
       console.log('API ERROR')
+      console.log(err)
     })
     .catch(err => {
       console.Console('Server error')

@@ -37,6 +37,22 @@ function onClickButonItem(ctx) {
       itemList[x].addEventListener('click',(e) => {
         if(e.target.attributes.action) {
           onCloseModal(ctx)
+          console.log(document.getElementById('operation').value)
+
+          onRequest({
+            latex:document.getElementById('operation').value,
+            operation:e.target.attributes.action.value,
+            mode:'deg'
+          },(e) => {
+            if(e.data.status == 'ok') {
+              console.log(e)
+              document.getElementById('result').innerText = e.data.result
+            } else {
+              console.error('Error de sintaxis ...')
+            }
+          })
+
+
           if(e.target.attributes.action.value == 'grapth'){
             openGraphModal()
           }

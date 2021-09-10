@@ -15,21 +15,25 @@
 }
 
 
-#result {
-    font-size: 20px;
-    color: rgba(0, 0, 0,.80);
-}
 
 
 #container-text {
     position: absolute;
     bottom: 0;
     right: 35px;
-    top:75px;
+    top:60px;
     text-align: end;
 }
 
 #operation-box-container {
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction:row-reverse;
+    margin-bottom: 5px;
 }
 
+
+
+#result-container {
+    display: flex;
+    flex-direction:row-reverse;
+}
