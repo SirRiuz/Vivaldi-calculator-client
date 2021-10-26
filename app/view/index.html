@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="google" content="notranslate">
     <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <span class="hljs-tag"><meta name="viewport" content="target-densitydpi=device-dpi, initial-scale=1.0, user-scalable=no" />
     <title>Vivaldi</title>
     <link rel="stylesheet" href="./css/appbar.css">
     <link rel="stylesheet" href="./css/graph.css">
     <link rel="stylesheet" href="./css/body.css">
     <link rel="stylesheet" href="./css/calculator.css">
     <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/steps.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
 
+
+    <div class="modal-step" id="modal-step">
+        <div id="icon-container">
+            <svg id="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke="#B8B8B8" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                <path d="M6 6L18 18" stroke="#B8B8B8" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+            </svg>
+        </div>    
+        <div id="step-body"></div>
+    </div>
+
     <div id="grapth-canvas-modal">
-        <div id="screen"></div>
+        <div id="screen-modal"></div>
         <div id="modal-graph"></div>
+    </div>
+
+
+    <div id="grapth-canvas-modal-3d">
+        <div id="screen-modal-m"></div>
+        <div id="modal-graph-3d">
+            <div id="canvas-3d-preview">
+            </div>
+        </div>
     </div>
 
 
@@ -42,6 +67,14 @@
                 <span>Resolver limite</span>
             </div>
 
+            <div class="item-operation-modal" action="permutation">
+                <span>Resolver permutacion</span>
+            </div>
+
+            <div class="item-operation-modal" action="convination">
+                <span>Resolver combinación</span>
+            </div>
+
             <div class="item-operation-modal" action="integrate">
                 <span>Integrar</span>
             </div>
@@ -50,9 +83,14 @@
                 <span>Derivar</span>
             </div>
 
-            <div class="item-operation-modal" action="grapth">
+            <div class="item-operation-modal" action="grapth" mode="2d">
                 <span>Graficar</span>
             </div>
+
+            <div class="item-operation-modal" action="grapth" mode="3d">
+                <span>Graficar en 3d</span>
+            </div>
+
         </div>
     </div>
 
@@ -60,8 +98,15 @@
     <div id="header-container">
         <div id="container-text">
 
+            <div id="show">      
+                <svg id="show-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="3.5" stroke="#2e2e2e"/>
+                    <path d="M21 12C21 12 20 4 12 4C4 4 3 12 3 12" stroke="#2e2e2e"/>
+                </svg>    
+            </div>
+
             <div id="operation-box-container">
-                <div><math-field id="operation" style="font-size: 25px; "></math-field></div>
+                <div><math-field id="operation" style="font-size: 25px;z-index: 999999999999; padding: 8px;"></math-field></div>
                 <div></div>
             </div>
 
@@ -74,120 +119,297 @@
     </div>
 
 
-    <div id="buttons-container">
-        <div id="buttons-functions-container">
-            <div>
-                <div id="item-container-options">
-                    <button class="btn-item">deg</button>
-                </div>
-                <div id="item-container">
-                    <button class="btn-item">f(x)</button>
-                    <button class="btn-item">log</button>
-                    <button renderValue="ln(" class="btn-item">ln</button>
-                    <button class="btn-item" renderValue="\int\placeholder{⬚}">
-                        <svg renderValue="\int\placeholder{⬚}" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.14354 31.7881C10.48 31.7881 11.6186 30.599 11.9744 27.8664L13.872 13.3431C14.0737 11.825 14.6785 11.1545 15.7815 11.1545C16.3033 11.1545 16.6829 11.2304 16.9201 11.2937V9.47192C16.5406 9.38337 16.1373 9.32011 15.6629 9.32011C13.3265 9.32011 12.1878 10.5093 11.8321 13.2419L9.93443 27.7652C9.7328 29.2833 9.12794 29.9538 8.02493 29.9538C7.50308 29.9538 7.12356 29.8779 6.88635 29.8146V31.6364C7.26588 31.7249 7.66913 31.7881 8.14354 31.7881Z" fill="black"/>
-                            <path d="M31.5428 16.8042H20.41V28.2474H31.5428V16.8042Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.7 0.51"/>
-                        </svg>
-                    </button>
-                    
-                    <button class="btn-item" renderValue="\lim_{⬚\to ⬚}">
-                        <svg renderValue="\lim_{⬚\to ⬚}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11.2993 20.2667H12.5936V9.11066H11.2993V20.2667ZM15.3389 10.796C15.7927 10.796 16.1498 10.4172 16.1498 9.95335C16.1498 9.48174 15.7927 9.11066 15.3389 9.11066C14.8926 9.11066 14.5281 9.48174 14.5281 9.95335C14.5281 10.4172 14.8926 10.796 15.3389 10.796ZM14.6918 20.2667H15.9861V12.2263H14.6918V20.2667ZM18.0173 20.2667H19.3116V15.226C19.3116 14.1127 20.0554 13.2777 21.0819 13.2777C22.0416 13.2777 22.6664 13.9117 22.6664 14.878V20.2667H23.9608V15.1564C23.9608 14.0663 24.6823 13.2777 25.7088 13.2777C26.7279 13.2777 27.3156 13.9271 27.3156 15.0249V20.2667H28.6099V14.7157C28.6099 13.1232 27.6205 12.0871 26.0882 12.0871C25.0022 12.0871 24.0946 12.6592 23.6631 13.6179H23.6334C23.2987 12.6438 22.5176 12.0871 21.4613 12.0871C20.4199 12.0871 19.6314 12.6592 19.267 13.5096H19.2371V12.2263H18.0173V20.2667Z" fill="black"/>
-                            <path d="M13.7109 23.5387H6.60156V30.9276H13.7109V23.5387Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
-                            <path d="M32.8052 23.5387H25.6958V30.9276H32.8052V23.5387Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
-                            <path d="M23.1688 27.4573C23.2878 27.3335 23.2878 27.1331 23.1688 27.0094L21.2298 24.9941C21.1109 24.8705 20.9179 24.8705 20.7989 24.9941C20.6799 25.1179 20.6799 25.3184 20.7989 25.442L22.5224 27.2333L20.7989 29.0247C20.6799 29.1483 20.6799 29.3488 20.7989 29.4725C20.9179 29.5962 21.1109 29.5962 21.2298 29.4725L23.1688 27.4573ZM16.8596 27.55H22.9534V26.9167H16.8596V27.55Z" fill="black"/>
-                        </svg>                            
-                    </button>
-                </div>
-                <div id="item-container">
-                    <button class="btn-item" renderValue=" sin(">sin</button>
-                    <button class="btn-item" renderValue=" cos(">cos</button>
-                    <button class="btn-item" renderValue=" tan(">tan</button>
-                    <button class="btn-item" renderValue="abs">
-                        <svg renderValue="abs" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0)">
-                                <path d="M24.4637 13.2099H13.5643V24.8359H24.4637V13.2099Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
-                                <path d="M7.71948 9.30209V28.7492" stroke="#444444" stroke-width="2"/>
-                                <path d="M31.5002 9.29961V28.7467" stroke="#444444" stroke-width="2"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0">
-                                <rect width="38" height="38" fill="white"/>
-                            </clipPath>
-                            </defs>
-                        </svg>                            
-                    </button>
-                    <button class="btn-item" renderValue="∞">
-                        <img renderValue="∞" src="../assets//infinit_icon.png" alt="">
-                    </button>
+
+    <div id="root-container">
+        
+        <div id="buttons-container">
+
+            <div id="buttons-functions-container">
+                <div>
+                    <div id="item-container-options">
+                        <button class="btn-item">deg</button>
+                    </div>
+                    <div id="item-container">
+                        <button class="btn-item" renderValue="^2">
+                            <svg renderValue="^2" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.7062 9.05508H23.9158C23.9158 7.88463 24.8473 7.00318 26.0847 7.00318C27.2316 7.00318 27.9685 7.81961 27.9685 8.84555C27.9685 9.71254 27.6558 10.2761 26.3001 11.7428L22.7687 15.572V16.4679H29.3866V15.3118H24.4858V15.283L26.8702 12.7399C28.7124 10.7746 29.2199 9.91484 29.2199 8.76607C29.2199 7.18381 27.9407 5.86887 26.0847 5.86887C24.1521 5.86887 22.7062 7.22715 22.7062 9.05508Z" fill="#444444"/>
+                                <path d="M19.2259 17.6507H8.03967V29.2767H19.2259V17.6507Z" stroke="#767676" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                            </svg>   
+                        </button>
+
+                        <button class="btn-item">
+                            (
+                        </button>
+                        <button class="btn-item">
+                            )                               
+                        </button>
+                        <button class="btn-item" renderValue="\int\placeholder{⬚} ">
+                            =
+                        </button>
+                        
+                        <button class="btn-item">
+                            C
+                        </button>
+                    </div>
+                    <div id="item-container">
+                        <button class="btn-item" renderValue=" \log(">log</button>
+                        <button class="btn-item" renderValue=" \ln(">ln</button>
+                        <button class="btn-item" renderValue=" ⬚\frac{⬚}{⬚}">
+                            <svg renderValue=" ⬚\frac{⬚}{⬚}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.1281 13.8406H2.9458V25.4626H14.1281V13.8406Z" stroke="#767676" stroke-width="1.7" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                <path d="M31.6131 3.48712H20.4308V15.1091H31.6131V3.48712Z" stroke="#767676" stroke-width="1.7" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                <path d="M31.6131 22.9274H20.4308V34.5494H31.6131V22.9274Z" stroke="#767676" stroke-width="1.7" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                <path d="M16.2627 18.5949H35.7809" stroke="black" stroke-width="1.00093"/>
+                            </svg>
+                        </button>
+                        <button class="btn-item" renderValue="abs">%</button>
+                        <button class="btn-item" renderValue=" e^⬚">    
+                            <svg  renderValue=" e^⬚" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M31.4658 8.30222H25.5989V14.3998H31.4658V8.30222Z" stroke="#919191" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="1.38 0.41"/>
+                                <path d="M24.0001 22.6232H16.2555C16.284 23.8922 16.6126 24.8719 17.241 25.5622C17.8694 26.2524 18.7335 26.5975 19.8331 26.5975C21.0686 26.5975 22.2041 26.1745 23.2396 25.3284V27.0428C22.2754 27.7701 21.0007 28.1338 19.4155 28.1338C17.8658 28.1338 16.6483 27.618 15.7628 26.5864C14.8772 25.5473 14.4346 24.089 14.4346 22.2113C14.4346 20.4374 14.9166 18.9938 15.8806 17.8805C16.8517 16.7598 18.0551 16.1995 19.4904 16.1995C20.9258 16.1995 22.0363 16.6819 22.8218 17.6467C23.6072 18.6116 24.0001 19.9513 24.0001 21.6657V22.6232ZM22.2004 21.0757C22.1934 20.0217 21.9469 19.2017 21.4614 18.6153C20.9829 18.029 20.3152 17.7359 19.4583 17.7359C18.6299 17.7359 17.9265 18.0438 17.3481 18.6598C16.7697 19.2759 16.4126 20.0811 16.277 21.0757H22.2004Z" fill="black"/>
+                            </svg>           
+                        </button>
+                    </div>
                 </div>
             </div>
+    
+            <div id="generic-buttons-container">
+                <div>
+                    <div id="item-container">
+                        <button id="btn-item-back">
+                            <svg width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3191 22.612L18.4621 21.7213L21.0711 19L18.4621 16.2787L19.3191 15.388L21.9375 18.0995L24.5559 15.388L25.4129 16.2787L22.8039 19L25.4129 21.7213L24.5559 22.612L21.9375 19.9005L19.3191 22.612ZM17.0625 11.4H29.25V26.6H17.0625L9.75 19L17.0625 11.4ZM28.0312 25.3333V12.6667H17.5672L11.4734 19L17.5672 25.3333H28.0312Z" fill="black"/>
+                            </svg>         
+                        </button>
+                        <button class="btn-item" renderValue="^\placeholder{⬚}">
+                            <svg renderValue="^\placeholder{⬚}" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M28.8209 8.13835H21.8849V15.5367H28.8209V8.13835Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                <path d="M20.8948 18.2841H9.99542V29.9101H20.8948V18.2841Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                            </svg>
+                        </button>
+                        <button class="btn-item" renderValue="\sqrt[⬚]{⬚}">
+                            <svg renderValue="\sqrt[⬚]{⬚}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.98767 19.9662L12.808 28.9148H14.9233L19.0845 11.9362H22.4609V10.4396H17.8927L13.9104 27.1602H13.7416L11.5766 19.9662H9.98767Z" fill="black"/>
+                                <path d="M31.8213 17.2178H20.6351V28.8438H31.8213V17.2178Z" stroke="#767676" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                <path d="M17.8909 11.4458H32.7379" stroke="black" stroke-width="1.60149"/>
+                                <path d="M14.9394 8.12845H7.82092V15.5268H14.9394V8.12845Z" stroke="#767676" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                            </svg>                                
+                        </button>
+                        <button class="btn-item" renderValue="\sqrt{⬚}">
+                            <svg renderValue="\sqrt{⬚}" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.94751 19.9662L10.6956 28.9148H12.7566L16.811 11.9362H20.101V10.4396H15.6498L11.7696 27.1602H11.6052L9.49571 19.9662H7.94751Z" fill="black"/>
+                                <path d="M29.2217 17.2191H18.3224V28.8451H29.2217V17.2191Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                <path d="M15.6462 11.4483H30.1126" stroke="black" stroke-width="1.60149"/>
+                            </svg>
+                        </button>
+                        <button class="btn-item-opacity" renderValue="\frac{⬚}{⬚}">÷</button>
+                    </div>
+    
+                    <div id="item-container">
+                        <button class="btn-item" renderValue="!">
+                            <svg renderValue="!" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M25.4968 10.004L25.6362 21.9439H27.4476L27.5869 10.004H25.4968ZM26.5419 28.0004C27.2967 28.0004 27.8656 27.3812 27.8656 26.5885C27.8656 25.7834 27.2967 25.1765 26.5419 25.1765C25.7988 25.1765 25.2182 25.7834 25.2182 26.5885C25.2182 27.3812 25.7988 28.0004 26.5419 28.0004Z" fill="#444444"/>
+                                <path d="M20.8948 13.2125H9.99542V24.8385H20.8948V13.2125Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                            </svg>
+                        </button>
+                        <button class="btn-item">7</button>
+                        <button class="btn-item">8</button>
+                        <button class="btn-item">9</button>
+                        <button class="btn-item-opacity" renderValue="\cdot">×</button>
+                    </div>
+    
+                    <div id="item-container">
+                        <button class="btn-item" renderValue="\pi">
+                            <svg renderValue="\pi" width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.6602 21.0002H14.1279V13.1604H17.6699V18.8733C17.6699 20.4465 18.2852 21.0706 19.6738 21.0706C20.0342 21.0706 20.3066 21.0178 20.4561 20.9651V19.6907C20.333 19.7346 20.0869 19.761 19.9463 19.761C19.4014 19.761 19.1377 19.4709 19.1377 18.7151V13.1604H20.9658V11.8596H10.8672V13.1604H12.6602V21.0002Z" fill="black"/>
+                            </svg>                                
+                        </button>
+                        <button class="btn-item">4</button>
+                        <button class="btn-item">5</button>
+                        <button class="btn-item">6</button>
+                        <button class="btn-item-opacity">+</button>
+                    </div>
+    
+                    <div id="item-container">
+                        <button class="btn-item">e</button>
+                        <button class="btn-item">1</button>
+                        <button class="btn-item">2</button>
+                        <button class="btn-item">3</button>
+                        <button class="btn-item-opacity">-</button>
+                    </div>
+    
+                    <div id="item-container">
+                        <button class="btn-item-nav" orientation="left">
+                            <svg orientation="left" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M29.25 19.6334H12.1304L19.6238 27.4213L18.7668 28.3121L9.80713 19L18.7668 9.68805L19.6238 10.5787L12.1304 18.3667H29.25V19.6334Z" fill="black"/>
+                            </svg>
+                        </button>
+                        <button class="btn-item-nav" orientation="right">
+                            <svg orientation="right" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M29.1928 19L20.2332 28.312L19.3762 27.4213L26.8697 19.6333H9.75V18.3667H26.8697L19.3762 10.5786L20.2332 9.68802L29.1928 19Z" fill="black"/>
+                            </svg>
+                        </button>
+                        <button class="btn-item">0</button>
+                        <button class="btn-item">.</button>
+                        <button class="btn-item-opacity-equals" id="btn-item-opacity-equals">
+                            <svg width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M29.9832 19.6331L11.1401 28.3711L13.2349 19.6331L11.1401 10.895L29.9832 19.6331ZM12.9302 13.1117L14.3488 19.0294H25.6794L12.9302 13.1117ZM14.3298 20.2961L12.9302 26.1544L25.5652 20.2961H14.3298Z" fill="black"/>
+                            </svg>                                
+                        </button>
+                    </div>
+    
+                </div>
+            </div>
+    
         </div>
 
-        <div id="generic-buttons-container">
-            <div>
-                <div id="item-container">
-                    <button id="btn-item-back">C</button>
-                    <button class="btn-item" renderValue="^⬚">
-                        <svg renderValue="^⬚" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M28.8209 8.13835H21.8849V15.5367H28.8209V8.13835Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
-                            <path d="M20.8948 18.2841H9.99542V29.9101H20.8948V18.2841Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
-                        </svg>
-                    </button>
-                    <button class="btn-item" renderValue="\%">%</button>
-                    <button class="btn-item" renderValue="\sqrt{⬚}">
-                        <svg renderValue="\sqrt{⬚}" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.94751 19.9662L10.6956 28.9148H12.7566L16.811 11.9362H20.101V10.4396H15.6498L11.7696 27.1602H11.6052L9.49571 19.9662H7.94751Z" fill="black"/>
-                            <path d="M29.2217 17.2191H18.3224V28.8451H29.2217V17.2191Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
-                            <path d="M15.6462 11.4483H30.1126" stroke="black" stroke-width="1.60149"/>
-                        </svg>
-                    </button>
-                    <button class="btn-item-opacity" renderValue="\frac">÷</button>
+        <div id="after-buttons-container">
+            <div id="buttons-container">
+                <div id="buttons-functions-container">
+                    <div>
+                        <div id="item-container-options">
+                            <button class="btn-item" style="visibility: hidden;">x</button>
+                        </div>
+                        <div id="item-container">
+                            <button renderValue=" \sin(" class="btn-item">sin</button>
+                            <button class="btn-item" renderValue=" \cos(">cos</button>
+                            <button class="btn-item" renderValue=" \tan(">tan</button>
+                        </div>
+                        <div id="item-container">
+                            <button class="btn-item" renderValue=" \csc(">csc</button>
+                            <button class="btn-item" renderValue=" \sec(">sec</button>
+                            <button class="btn-item" renderValue=" \cot(">cot</button>
+                        </div>
+                    </div>
                 </div>
-
-                <div id="item-container">
-                    <button class="btn-item" renderValue="!">
-                        <svg renderValue="!" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M25.4968 10.004L25.6362 21.9439H27.4476L27.5869 10.004H25.4968ZM26.5419 28.0004C27.2967 28.0004 27.8656 27.3812 27.8656 26.5885C27.8656 25.7834 27.2967 25.1765 26.5419 25.1765C25.7988 25.1765 25.2182 25.7834 25.2182 26.5885C25.2182 27.3812 25.7988 28.0004 26.5419 28.0004Z" fill="#444444"/>
-                            <path d="M20.8948 13.2125H9.99542V24.8385H20.8948V13.2125Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
-                        </svg>
-                    </button>
-                    <button class="btn-item">7</button>
-                    <button class="btn-item">8</button>
-                    <button class="btn-item">9</button>
-                    <button class="btn-item-opacity" renderValue="\cdot">×</button>
+        
+                <div id="generic-buttons-container">
+                    <div>
+                        <div id="item-container">
+                            <button class="btn-item" renderValue=" \int_⬚^⬚⬚">
+                                <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.12765 24C7.22339 24 8.24467 23.0473 8.56381 20.8582L10.2659 9.22297C10.4468 8.00676 10.9893 7.4696 11.9787 7.4696C12.4468 7.4696 12.7872 7.5304 13 7.58108V6.12162C12.6596 6.05068 12.2979 6 11.8723 6C9.77659 6 8.75531 6.9527 8.43616 9.14189L6.73404 20.7771C6.55319 21.9933 6.01063 22.5304 5.02128 22.5304C4.5532 22.5304 4.21277 22.4696 4 22.4189V23.8783C4.34043 23.9494 4.70213 24 5.12765 24Z" fill="black"/>
+                                    <path d="M28.9945 9.94872H19.6195V19.3237H28.9945V9.94872Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.7 0.51"/>
+                                    <path d="M20.3012 21.8808H14.3353V27.8467H20.3012V21.8808Z" stroke="#767676" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="1.7 0.51"/>
+                                    <path d="M22.8584 1.42638H16.8925V7.39229H22.8584V1.42638Z" stroke="#767676" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="1.7 0.51"/>
+                                </svg>                                  
+                            </button>
+                            <button class="btn-item" renderValue=" \int⬚">
+                                <svg renderValue="\int\placeholder{⬚}" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.14354 31.7881C10.48 31.7881 11.6186 30.599 11.9744 27.8664L13.872 13.3431C14.0737 11.825 14.6785 11.1545 15.7815 11.1545C16.3033 11.1545 16.6829 11.2304 16.9201 11.2937V9.47192C16.5406 9.38337 16.1373 9.32011 15.6629 9.32011C13.3265 9.32011 12.1878 10.5093 11.8321 13.2419L9.93443 27.7652C9.7328 29.2833 9.12794 29.9538 8.02493 29.9538C7.50308 29.9538 7.12356 29.8779 6.88635 29.8146V31.6364C7.26588 31.7249 7.66913 31.7881 8.14354 31.7881Z" fill="black"/>
+                                    <path d="M31.5428 16.8042H20.41V28.2474H31.5428V16.8042Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.7 0.51"/>
+                                </svg>
+                            </button>
+                            <button class="btn-item" renderValue=" \lim_{⬚\to⬚}(">
+                                <svg renderValue="\lim_{⬚\to ⬚}(" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.2993 20.2667H12.5936V9.11066H11.2993V20.2667ZM15.3389 10.796C15.7927 10.796 16.1498 10.4172 16.1498 9.95335C16.1498 9.48174 15.7927 9.11066 15.3389 9.11066C14.8926 9.11066 14.5281 9.48174 14.5281 9.95335C14.5281 10.4172 14.8926 10.796 15.3389 10.796ZM14.6918 20.2667H15.9861V12.2263H14.6918V20.2667ZM18.0173 20.2667H19.3116V15.226C19.3116 14.1127 20.0554 13.2777 21.0819 13.2777C22.0416 13.2777 22.6664 13.9117 22.6664 14.878V20.2667H23.9608V15.1564C23.9608 14.0663 24.6823 13.2777 25.7088 13.2777C26.7279 13.2777 27.3156 13.9271 27.3156 15.0249V20.2667H28.6099V14.7157C28.6099 13.1232 27.6205 12.0871 26.0882 12.0871C25.0022 12.0871 24.0946 12.6592 23.6631 13.6179H23.6334C23.2987 12.6438 22.5176 12.0871 21.4613 12.0871C20.4199 12.0871 19.6314 12.6592 19.267 13.5096H19.2371V12.2263H18.0173V20.2667Z" fill="black"/>
+                                    <path d="M13.7109 23.5387H6.60156V30.9276H13.7109V23.5387Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M32.8052 23.5387H25.6958V30.9276H32.8052V23.5387Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M23.1688 27.4573C23.2878 27.3335 23.2878 27.1331 23.1688 27.0094L21.2298 24.9941C21.1109 24.8705 20.9179 24.8705 20.7989 24.9941C20.6799 25.1179 20.6799 25.3184 20.7989 25.442L22.5224 27.2333L20.7989 29.0247C20.6799 29.1483 20.6799 29.3488 20.7989 29.4725C20.9179 29.5962 21.1109 29.5962 21.2298 29.4725L23.1688 27.4573ZM16.8596 27.55H22.9534V26.9167H16.8596V27.55Z" fill="black"/>
+                                </svg> 
+                            </button>
+                        </div>
+        
+                        <div id="item-container">
+                            <button class="btn-item" renderValue="!">
+                                <svg width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M35.4468 24.426H37.8391V23.4241H35.4468V20.814H34.4827V23.4241H32.0905V24.426H34.4827V27.036H35.4468V24.426Z" fill="black"/>
+                                    <path d="M7.84595 20.2667H9.14028V9.11066H7.84595V20.2667ZM11.8856 10.796C12.3393 10.796 12.6964 10.4172 12.6964 9.95335C12.6964 9.48174 12.3393 9.11066 11.8856 9.11066C11.4392 9.11066 11.0747 9.48174 11.0747 9.95335C11.0747 10.4172 11.4392 10.796 11.8856 10.796ZM11.2384 20.2667H12.5327V12.2263H11.2384V20.2667ZM14.5639 20.2667H15.8582V15.226C15.8582 14.1127 16.602 13.2777 17.6286 13.2777C18.5882 13.2777 19.2131 13.9117 19.2131 14.878V20.2667H20.5074V15.1564C20.5074 14.0663 21.2289 13.2777 22.2554 13.2777C23.2746 13.2777 23.8622 13.9271 23.8622 15.0249V20.2667H25.1565V14.7157C25.1565 13.1232 24.1672 12.0871 22.6348 12.0871C21.5488 12.0871 20.6412 12.6592 20.2098 13.6179H20.18C19.8454 12.6438 19.0643 12.0871 18.008 12.0871C16.9665 12.0871 16.178 12.6592 15.8136 13.5096H15.7839V12.2263H14.5639V20.2667Z" fill="black"/>
+                                    <path d="M10.2576 23.5387H3.14819V30.9276H10.2576V23.5387Z" stroke="#919191" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M29.3518 23.5387H22.2424V30.9276H29.3518V23.5387Z" stroke="#919191" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M19.7155 27.4573C19.8344 27.3335 19.8344 27.1331 19.7155 27.0094L17.7764 24.9941C17.6575 24.8705 17.4646 24.8705 17.3455 24.9941C17.2265 25.1179 17.2265 25.3184 17.3455 25.442L19.0691 27.2333L17.3455 29.0247C17.2265 29.1483 17.2265 29.3488 17.3455 29.4725C17.4646 29.5962 17.6575 29.5962 17.7764 29.4725L19.7155 27.4573ZM13.4062 27.55H19.5V26.9167H13.4062V27.55Z" fill="black"/>
+                                </svg>    
+                            </button>
+                            <button class="btn-item" renderValue=" \sum_{i=⬚}^⬚⬚">
+                                <svg renderValue=" \sum_{i=⬚}^⬚⬚" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0)">
+                                    <path d="M8.91446 25.243L12.4315 20.0013V19.9364L9.11085 14.9915V14.9267H15.9752V13.4238H7.12026V14.7411L10.7087 20.0848L6.96851 25.6234V26.8109H16.2252V25.308H8.91446V25.243Z" fill="black"/>
+                                    <path d="M15.3362 2.06111H8.22681V9.45H15.3362V2.06111Z" stroke="#919191" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M15.3362 29.8163H8.22681V37.2052H15.3362V29.8163Z" stroke="#919191" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M31.9927 13.8278H20.8208V25.4389H31.9927V13.8278Z" stroke="#919191" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0">
+                                    <rect width="39" height="38" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>                                    
+                            </button>
+                            <button class="btn-item">
+                                
+                                <svg width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.5701 9.81702H10.4607V17.2059H17.5701V9.81702Z" stroke="#919191" stroke-width="1.1" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M27.3202 9.81702H20.2108V17.2059H27.3202V9.81702Z" stroke="#919191" stroke-width="1.1" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M17.5701 19.9504H10.4607V27.3393H17.5701V19.9504Z" stroke="#919191" stroke-width="1.1" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M27.3202 19.9504H20.2108V27.3393H27.3202V19.9504Z" stroke="#919191" stroke-width="1.1" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M6.70374 7.60016V30.6113" stroke="black" stroke-width="1.1"/>
+                                    <path d="M31.0781 7.60031V30.6114" stroke="black" stroke-width="1.1"/>
+                                    <path d="M6.09436 7.96681H10.9694" s+ctroke="black" stroke-width="1.1"/>
+                                    <path d="M6.09375 29.9782H10.9688" stroke="black" stroke-width="1.1"/>
+                                    <path d="M26.8125 7.96696H31.6875" stroke="black" stroke-width="1.1"/>
+                                    <path d="M26.8125 29.9782H31.6875" stroke="black" stroke-width="1.1"/>
+                                </svg>    
+                            </button>
+                        </div>
+        
+                        <div id="item-container">
+                            <button class="btn-item">
+                                <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.5254 20.9995V10.4307H6.02539V20.9995H7.37698V11.6172H13.1738V20.9995H14.5254Z" fill="black"/>
+                                    <path d="M13.0835 1.41667H7.25012V7.25H13.0835V1.41667Z" stroke="#919191" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M13.0835 23.4162H7.25012V29.2495H13.0835V23.4162Z" stroke="#919191" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M26.5834 11.0827H17.4167V20.2494H26.5834V11.0827Z" stroke="#919191" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                </svg>    
+                            </button>
+                            <button class="btn-item" renderValue="_{\placeholder{⬚}}C_{\placeholder{⬚}}">       
+                                <svg renderValue="_{\placeholder{⬚}}C_{\placeholder{⬚}}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M25.9427 14.2714C25.751 14.1408 25.5294 14.0069 25.2781 13.8694C25.0335 13.7319 24.7624 13.6083 24.4648 13.4984C24.1673 13.3884 23.84 13.299 23.483 13.2303C23.1325 13.1616 22.7556 13.1272 22.3522 13.1272C21.3604 13.1272 20.4645 13.3094 19.6644 13.6735C18.871 14.0378 18.1965 14.5394 17.6411 15.1786C17.0856 15.8176 16.6559 16.5702 16.3517 17.436C16.0542 18.2951 15.9054 19.2262 15.9054 20.2296C15.9054 21.0473 16.0145 21.7724 16.2328 22.4045C16.4509 23.0299 16.7617 23.5591 17.165 23.9921C17.5684 24.4182 18.051 24.741 18.6131 24.9611C19.1752 25.181 19.7966 25.2909 20.4777 25.2909C20.9141 25.2909 21.3108 25.2668 21.6679 25.2187C22.025 25.1637 22.3555 25.0915 22.6597 25.0022C22.9639 24.9061 23.2483 24.796 23.5127 24.6724C23.7838 24.5418 24.0449 24.4044 24.2963 24.2601L23.9094 26.0743C23.3738 26.3286 22.7985 26.521 22.1837 26.6516C21.5754 26.789 20.8909 26.8578 20.1306 26.8578C19.2314 26.8578 18.4114 26.7031 17.6709 26.3938C16.937 26.0846 16.3088 25.6482 15.7865 25.0847C15.2707 24.5143 14.8707 23.8306 14.5864 23.0333C14.302 22.2362 14.1598 21.3497 14.1598 20.3738C14.1598 19.082 14.3549 17.8965 14.745 16.8175C15.1417 15.7386 15.7004 14.8109 16.4212 14.0344C17.1485 13.2578 18.018 12.6531 19.0297 12.2201C20.0479 11.7872 21.1753 11.5707 22.4118 11.5707C23.2581 11.5707 24.0053 11.6669 24.6533 11.8593C25.3079 12.0449 25.86 12.2579 26.3096 12.4984L25.9427 14.2714Z" fill="black"/>
+                                    <path d="M11.4922 22.0618H4.38281V29.4507H11.4922V22.0618Z" stroke="#919191" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M34.2268 22.0618H27.1174V29.4507H34.2268V22.0618Z" stroke="#919191" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                </svg>
+                            </button>
+                            <button class="btn-item" renderValue="_{\placeholder{⬚}}P_{\placeholder{⬚}}">
+                                <svg renderValue="_{\placeholder{⬚}}P_{\placeholder{⬚}}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M26.2888 15.7043C26.2888 16.4327 26.1699 17.1199 25.9317 17.7659C25.6937 18.405 25.33 18.965 24.8408 19.4461C24.3581 19.9272 23.7432 20.3086 22.996 20.5903C22.2488 20.8652 21.3695 21.0027 20.3578 21.0027H18.1956L17.065 26.6H15.3589L18.3641 11.8181H22.0438C22.8043 11.8181 23.4522 11.9281 23.9878 12.148C24.53 12.361 24.9698 12.6496 25.3069 13.0139C25.6508 13.3712 25.8987 13.7835 26.0508 14.2509C26.2095 14.7182 26.2888 15.2027 26.2888 15.7043ZM24.5333 15.8589C24.5333 15.4878 24.4704 15.1511 24.3449 14.8488C24.2258 14.5394 24.0473 14.2784 23.8093 14.0653C23.5713 13.8454 23.2738 13.677 22.9167 13.5602C22.5661 13.4434 22.1596 13.385 21.6967 13.385H19.7627L18.5228 19.4461H20.5165C21.2174 19.4461 21.8191 19.3568 22.3215 19.1781C22.8307 18.9925 23.2473 18.7417 23.5713 18.4257C23.9019 18.1027 24.1432 17.7247 24.2953 17.2918C24.454 16.8519 24.5333 16.3743 24.5333 15.8589Z" fill="black"/>
+                                    <path d="M11.4922 22.0618H4.38281V29.4507H11.4922V22.0618Z" stroke="#919191" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M34.2268 22.0618H27.1174V29.4507H34.2268V22.0618Z" stroke="#919191" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                </svg>         
+                            </button>
+                        </div>
+        
+                        <div id="item-container">
+                            <button class="btn-item" renderValue="\theta">
+                                <svg renderValue="\theta" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18.7728 28.1338C17.109 28.1338 15.8128 27.388 14.8845 25.8961C13.9562 24.4044 13.4919 22.3077 13.4919 19.6061C13.4919 16.7636 13.974 14.5852 14.938 13.0711C15.9092 11.5497 17.3018 10.7889 19.1156 10.7889C22.5576 10.7889 24.2786 13.6352 24.2786 19.3278C24.2786 22.1332 23.7966 24.3042 22.8326 25.8405C21.8756 27.3694 20.5224 28.1338 18.7728 28.1338ZM22.4577 18.5596C22.3291 14.4182 21.1543 12.3475 18.9335 12.3475C17.8623 12.3475 17.0054 12.9116 16.3627 14.0397C15.7199 15.1605 15.363 16.6671 15.2915 18.5596H22.4577ZM22.4683 20.0292H15.2808C15.3165 22.1592 15.6522 23.7846 16.2878 24.9053C16.9232 26.0186 17.8016 26.5753 18.9228 26.5753C20.0154 26.5753 20.8687 26.0113 21.4829 24.883C22.1041 23.7475 22.4326 22.1296 22.4683 20.0292Z" fill="black"/>
+                                </svg>
+                            </button>
+                            <button class="btn-item" renderValue="i">
+                                <svg renderValue="i" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18.9121 13.5721C18.5979 13.5721 18.33 13.4609 18.1087 13.2382C17.8873 13.0155 17.7766 12.7334 17.7766 12.3921C17.7766 12.0507 17.8873 11.7686 18.1087 11.546C18.33 11.3159 18.5979 11.2008 18.9121 11.2008C19.2333 11.2008 19.5047 11.3159 19.7261 11.546C19.9546 11.7686 20.0689 12.0507 20.0689 12.3921C20.0689 12.7186 19.9546 12.9969 19.7261 13.227C19.5047 13.4571 19.2333 13.5721 18.9121 13.5721ZM19.769 27.8667H18.0123V16.4667H19.769V27.8667Z" fill="black"/>
+                                </svg>                                    
+                            </button>
+                            <button class="btn-item" renderValue="\infty ">
+                                <img renderValue="\infty " src="../assets//infinit_icon.png" alt="" srcset="">
+                            </button>
+                        </div>
+        
+                        <div id="item-container">
+                            <button class="btn-item" renderValue=" x">x</button>
+                            <button class="btn-item" renderValue=" y">y</button>
+                            <button class="btn-item" renderValue=" z">z</button>
+                        </div>
+        
+                    </div>
                 </div>
-
-                <div id="item-container">
-                    <button class="btn-item">π</button>
-                    <button class="btn-item">4</button>
-                    <button class="btn-item">5</button>
-                    <button class="btn-item">6</button>
-                    <button class="btn-item-opacity">+</button>
-                </div>
-
-                <div id="item-container">
-                    <button class="btn-item">e</button>
-                    <button class="btn-item">1</button>
-                    <button class="btn-item">2</button>
-                    <button class="btn-item">3</button>
-                    <button class="btn-item-opacity">-</button>
-                </div>
-
-                <div id="item-container">
-                    <button class="btn-item">(</button>
-                    <button class="btn-item">)</button>
-                    <button class="btn-item">0</button>
-                    <button class="btn-item">.</button>
-                    <button class="btn-item-opacity-equals" id="btn-item-opacity-equals">=</button>
-                </div>
-
+        
             </div>
+    
         </div>
 
     </div>
 
+
+    <script src="./js/utils.js"></script>
     <script src="./js/grapthmodal.js"></script>
     <script src="./js/api.js"></script>
     <script src="./js/keyNavigator.js"></script>
@@ -195,6 +417,7 @@
     <script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
     <script src="https://unpkg.com/mathlive/dist/mathlive.min.js"></script>
     <script src="./js/graph.js"></script>
+    <script src="./js/steps.js"></script>
 
 </body>
 </html>

@@ -7,9 +7,9 @@ var win = null
 
 app.on('ready',() => {
     win = new BrowserWindow({
-        width:335,
-        height:700,
-        //resizable:true
+        width:540,
+        height:715,
+        //resizable:false
     })
     //win.removeMenu()
     win.loadFile(__dirname+'/view/index.html')

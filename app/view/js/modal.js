@@ -46,7 +46,7 @@ function onClickButonItem(ctx) {
           },(e) => {
             if(e.data.status == 'ok') {
               console.log(e)
-              document.getElementById('result').innerText = e.data.result
+              document.getElementById('result').innerText = `= ${e.data.latex}`
             } else {
               console.error('Error de sintaxis ...')
             }
@@ -54,7 +54,14 @@ function onClickButonItem(ctx) {
 
 
           if(e.target.attributes.action.value == 'grapth'){
-            openGraphModal()
+
+            if(e.target.attributes.mode.value == '3d'){
+              new Modal3dController().openGraphModal()
+            } 
+
+            if(e.target.attributes.mode.value == '2d'){
+              openGraphModal(e.target.attributes)
+            }
           }
         }
       })

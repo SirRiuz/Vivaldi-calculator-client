@@ -2,20 +2,54 @@
 
 
 
+class Modal3dController {
+
+  closeModal() {
+    document.getElementById('screen-modal-m').addEventListener('click',(e) => {
+      document.getElementById('grapth-canvas-modal-3d').style.display = 'none'
+    })
+  }
+  
+  openGraphModal(){
+    document.getElementById('result').textContent = '\\,'
+    document.getElementById('operation').textContent = '\\,'
+    document.getElementById('grapth-canvas-modal-3d').style.display = 'block'
+    onGrapth3d({
+      latex:document.getElementById('operation').value,
+      mode:'3d'
+    },(e) => {
+
+      document.getElementById('result').innerText = ''  
+
+      var el = document.getElementById('canvas-3d-preview')
+      el.style.backgroundImage = `url(data:image/png;base64,${e.baseCode})`
+      el.style.backgroundRepeat = 'no-repeat'
+      el.style.backgroundPosition = 'center'
+      el.style.backgroundSize = 'contain'
+    })
+
+  }
+
+}
+
+
+
+
+
 function closeModal() {
-  document.getElementById('screen').addEventListener('click',(e) => {
+  document.getElementById('screen-modal').addEventListener('click',(e) => {
     document.getElementById('grapth-canvas-modal').style.display = 'none'
   })
 }
 
 
 function openGraphModal() {
+
   document.getElementById('result').innerText = ''  
 
   document.getElementById('operation').innerText = document.getElementById('operation').value
   onParseLatex(document.getElementById('operation').textContent,(latex) => {
     document.getElementById('grapth-canvas-modal').style.display = 'block'
-    console.log(latex)
     grath(latex.parse)
   })  
 }
@@ -23,6 +57,6 @@ function openGraphModal() {
 
 
 closeModal()
-
+new Modal3dController().closeModal()
 
 

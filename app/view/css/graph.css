@@ -1,11 +1,38 @@
 
 
 #grapth-canvas-modal {
-    position: absolute;
+    display: none;
+}
+
+#grapth-canvas-modal-3d{
+    display:none;
+}
+
+
+#screen-modal {
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .19);
+    backdrop-filter: blur(2.5px);
     width: 100%;
     height: 100%;
-    z-index: 9999;
-    display: none;
+    overflow: hidden;
+    position: absolute;
+    z-index: 99;
+}
+
+
+
+#screen-modal-m {
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .19);
+    backdrop-filter: blur(2.5px);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 99;
 }
 
 
@@ -17,6 +44,27 @@
     z-index: 999;
     position: absolute;
     top: 15%;
+}
+
+
+#modal-graph-3d {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    width: 100%;
+    height: 510px;
+    z-index: 99999;
+    position: absolute;
+    top: 15%;
+}
+
+
+#canvas-3d-preview {
+    width: 90%;
+    height: 90%;
 }
 
 

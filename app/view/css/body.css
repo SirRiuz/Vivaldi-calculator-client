@@ -1,8 +1,11 @@
 
 
 body{
+    font-family: 'Ubuntu', sans-serif;    background: rgba(220, 220, 220,.90);
     overflow: hidden;
     background:#F6F6F6;
+    overflow-x: hidden;
+    overflow-y: hidden;
     margin: 0px;
     padding: 0px;
     -webkit-touch-callout: none; /* iOS Safari */
@@ -11,4 +14,19 @@ body{
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; 
+}
+
+
+
+::-webkit-scrollbar {
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #B8B8B8;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, .05);
 }
