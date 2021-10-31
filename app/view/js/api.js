@@ -7,11 +7,21 @@ const BASEURL = 'http://localhost:8000/'
 
 function onGetSteps(data,callback){
 
-  var url = `${BASEURL}api/v1/steps/?latex=${data.latex}&mode=${data.mode}`
-  
-  fetch(url)
+  //var url = `${BASEURL}api/v1/steps/?latex=${data.latex.replace('+','%2B')}&mode=${data.mode}`
+  var url = `${BASEURL}api/v1/steps/`
+  var params = new FormData()
+
+  console.log(data)
+  params.append('mode',data.mode)
+  params.append('latex',data.latex)
+
+  fetch(url,{
+    method:'POST',
+    body:params
+  })
     .then(res => res.json())
     .then(res => {
+      console.log(res)
       callback(res)
     })
 

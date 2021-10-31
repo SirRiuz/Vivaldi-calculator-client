@@ -36,11 +36,18 @@ function onClickButton() {
           operation:getOperation(),
           mode:'deg'
         },(e) => {
-          if(e.data.status == 'ok') {
-            document.getElementById('show').style.display = 'block'
-            document.getElementById('result').innerText = `=${e.data.latex}`
 
+          if(e.status != 'error') {
+            if(e.data.showSteps) {
+              document.getElementById('show').style.display = 'block'
+              document.getElementById('show-icon').setAttribute('mode',e.data.stepMode)
+            }
+            document.getElementById('result').innerText = `=${e.data.latex}`
+          } else {
+            document.getElementById('result').innerText = `\\, \\, `
+            document.getElementById('show').style.display = 'none'
           }
+
         })
       })
     }
@@ -68,9 +75,16 @@ function onClickButton() {
           operation:getOperation(),
           mode:'deg'
         },(e) => {
-          if(e.data.status == 'ok') {
-            document.getElementById('show').style.display = 'block'
+
+          if(e.status != 'error') {
+            if(e.data.showSteps) {
+              document.getElementById('show').style.display = 'block'
+              document.getElementById('show-icon').setAttribute('mode',e.data.stepMode)
+            }
             document.getElementById('result').innerText = `=${e.data.latex}`
+          } else {
+            document.getElementById('result').innerText = `\\, \\, `
+            document.getElementById('show').style.display = 'none'
           }
         })
 
@@ -183,6 +197,8 @@ function onDelete(){
   var el = document.getElementById('btn-item-back')
   el.addEventListener('click',() => {
     document.getElementById('operation').executeCommand('deleteBackward')
+    document.getElementById('result').innerText = `\\, \\, `
+    document.getElementById('show').style.display = 'none'
   })
 }
 

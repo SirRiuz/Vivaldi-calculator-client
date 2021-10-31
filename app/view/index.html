@@ -96,25 +96,15 @@
 
 
     <div id="header-container">
+        <div id="show">      
+            <svg id="show-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="3.5" stroke="#2e2e2e"/>
+                <path d="M21 12C21 12 20 4 12 4C4 4 3 12 3 12" stroke="#2e2e2e"/>
+            </svg>    
+        </div>
         <div id="container-text">
-
-            <div id="show">      
-                <svg id="show-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="3.5" stroke="#2e2e2e"/>
-                    <path d="M21 12C21 12 20 4 12 4C4 4 3 12 3 12" stroke="#2e2e2e"/>
-                </svg>    
-            </div>
-
-            <div id="operation-box-container">
-                <div><math-field id="operation" style="font-size: 25px;z-index: 999999999999; padding: 8px;"></math-field></div>
-                <div></div>
-            </div>
-
-            <div id="result-container">
-                <div><math-field id="result" style="font-size: 25px;"></math-field></div>
-                <div></div>
-            </div>
-
+            <div><math-field id="operation" style="font-size: 25px;z-index: 999; padding: 8px;"></math-field></div>
+            <div><math-field id="result" style="font-size: 25px;"></math-field></div>
         </div>
     </div>
 
@@ -143,7 +133,7 @@
                         <button class="btn-item">
                             )                               
                         </button>
-                        <button class="btn-item" renderValue="\int\placeholder{⬚} ">
+                        <button class="btn-item" renderValue="=">
                             =
                         </button>
                         
@@ -154,8 +144,8 @@
                     <div id="item-container">
                         <button class="btn-item" renderValue=" \log(">log</button>
                         <button class="btn-item" renderValue=" \ln(">ln</button>
-                        <button class="btn-item" renderValue=" ⬚\frac{⬚}{⬚}">
-                            <svg renderValue=" ⬚\frac{⬚}{⬚}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button class="btn-item" renderValue=" ⬚\frac{\placeholder{⬚}}{\placeholder{⬚}}">
+                            <svg renderValue=" ⬚\frac{\placeholder{⬚}}{\placeholder{⬚}}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14.1281 13.8406H2.9458V25.4626H14.1281V13.8406Z" stroke="#767676" stroke-width="1.7" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
                                 <path d="M31.6131 3.48712H20.4308V15.1091H31.6131V3.48712Z" stroke="#767676" stroke-width="1.7" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
                                 <path d="M31.6131 22.9274H20.4308V34.5494H31.6131V22.9274Z" stroke="#767676" stroke-width="1.7" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
@@ -163,8 +153,8 @@
                             </svg>
                         </button>
                         <button class="btn-item" renderValue="abs">%</button>
-                        <button class="btn-item" renderValue=" e^⬚">    
-                            <svg  renderValue=" e^⬚" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button class="btn-item" renderValue=" e^\placeholder{⬚}">    
+                            <svg  renderValue="e^\placeholder{⬚}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M31.4658 8.30222H25.5989V14.3998H31.4658V8.30222Z" stroke="#919191" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="1.38 0.41"/>
                                 <path d="M24.0001 22.6232H16.2555C16.284 23.8922 16.6126 24.8719 17.241 25.5622C17.8694 26.2524 18.7335 26.5975 19.8331 26.5975C21.0686 26.5975 22.2041 26.1745 23.2396 25.3284V27.0428C22.2754 27.7701 21.0007 28.1338 19.4155 28.1338C17.8658 28.1338 16.6483 27.618 15.7628 26.5864C14.8772 25.5473 14.4346 24.089 14.4346 22.2113C14.4346 20.4374 14.9166 18.9938 15.8806 17.8805C16.8517 16.7598 18.0551 16.1995 19.4904 16.1995C20.9258 16.1995 22.0363 16.6819 22.8218 17.6467C23.6072 18.6116 24.0001 19.9513 24.0001 21.6657V22.6232ZM22.2004 21.0757C22.1934 20.0217 21.9469 19.2017 21.4614 18.6153C20.9829 18.029 20.3152 17.7359 19.4583 17.7359C18.6299 17.7359 17.9265 18.0438 17.3481 18.6598C16.7697 19.2759 16.4126 20.0811 16.277 21.0757H22.2004Z" fill="black"/>
                             </svg>           
@@ -311,8 +301,8 @@
                         </div>
         
                         <div id="item-container">
-                            <button class="btn-item" renderValue="!">
-                                <svg width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button class="btn-item" renderValue="\lim_{⬚\to⬚^+}(">
+                                <svg renderValue="\lim_{⬚\to⬚^+}(" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M35.4468 24.426H37.8391V23.4241H35.4468V20.814H34.4827V23.4241H32.0905V24.426H34.4827V27.036H35.4468V24.426Z" fill="black"/>
                                     <path d="M7.84595 20.2667H9.14028V9.11066H7.84595V20.2667ZM11.8856 10.796C12.3393 10.796 12.6964 10.4172 12.6964 9.95335C12.6964 9.48174 12.3393 9.11066 11.8856 9.11066C11.4392 9.11066 11.0747 9.48174 11.0747 9.95335C11.0747 10.4172 11.4392 10.796 11.8856 10.796ZM11.2384 20.2667H12.5327V12.2263H11.2384V20.2667ZM14.5639 20.2667H15.8582V15.226C15.8582 14.1127 16.602 13.2777 17.6286 13.2777C18.5882 13.2777 19.2131 13.9117 19.2131 14.878V20.2667H20.5074V15.1564C20.5074 14.0663 21.2289 13.2777 22.2554 13.2777C23.2746 13.2777 23.8622 13.9271 23.8622 15.0249V20.2667H25.1565V14.7157C25.1565 13.1232 24.1672 12.0871 22.6348 12.0871C21.5488 12.0871 20.6412 12.6592 20.2098 13.6179H20.18C19.8454 12.6438 19.0643 12.0871 18.008 12.0871C16.9665 12.0871 16.178 12.6592 15.8136 13.5096H15.7839V12.2263H14.5639V20.2667Z" fill="black"/>
                                     <path d="M10.2576 23.5387H3.14819V30.9276H10.2576V23.5387Z" stroke="#919191" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
@@ -320,8 +310,8 @@
                                     <path d="M19.7155 27.4573C19.8344 27.3335 19.8344 27.1331 19.7155 27.0094L17.7764 24.9941C17.6575 24.8705 17.4646 24.8705 17.3455 24.9941C17.2265 25.1179 17.2265 25.3184 17.3455 25.442L19.0691 27.2333L17.3455 29.0247C17.2265 29.1483 17.2265 29.3488 17.3455 29.4725C17.4646 29.5962 17.6575 29.5962 17.7764 29.4725L19.7155 27.4573ZM13.4062 27.55H19.5V26.9167H13.4062V27.55Z" fill="black"/>
                                 </svg>    
                             </button>
-                            <button class="btn-item" renderValue=" \sum_{i=⬚}^⬚⬚">
-                                <svg renderValue=" \sum_{i=⬚}^⬚⬚" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button class="btn-item" renderValue=" \sum_{\placeholder{⬚}}^{\placeholder{⬚}}\placeholder{⬚}">
+                                <svg renderValue="\sum_{\placeholder{⬚}}^{\placeholder{⬚}}\placeholder{⬚}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0)">
                                     <path d="M8.91446 25.243L12.4315 20.0013V19.9364L9.11085 14.9915V14.9267H15.9752V13.4238H7.12026V14.7411L10.7087 20.0848L6.96851 25.6234V26.8109H16.2252V25.308H8.91446V25.243Z" fill="black"/>
                                     <path d="M15.3362 2.06111H8.22681V9.45H15.3362V2.06111Z" stroke="#919191" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
@@ -335,26 +325,20 @@
                                     </defs>
                                 </svg>                                    
                             </button>
-                            <button class="btn-item">
-                                
-                                <svg width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M17.5701 9.81702H10.4607V17.2059H17.5701V9.81702Z" stroke="#919191" stroke-width="1.1" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
-                                    <path d="M27.3202 9.81702H20.2108V17.2059H27.3202V9.81702Z" stroke="#919191" stroke-width="1.1" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
-                                    <path d="M17.5701 19.9504H10.4607V27.3393H17.5701V19.9504Z" stroke="#919191" stroke-width="1.1" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
-                                    <path d="M27.3202 19.9504H20.2108V27.3393H27.3202V19.9504Z" stroke="#919191" stroke-width="1.1" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
-                                    <path d="M6.70374 7.60016V30.6113" stroke="black" stroke-width="1.1"/>
-                                    <path d="M31.0781 7.60031V30.6114" stroke="black" stroke-width="1.1"/>
-                                    <path d="M6.09436 7.96681H10.9694" s+ctroke="black" stroke-width="1.1"/>
-                                    <path d="M6.09375 29.9782H10.9688" stroke="black" stroke-width="1.1"/>
-                                    <path d="M26.8125 7.96696H31.6875" stroke="black" stroke-width="1.1"/>
-                                    <path d="M26.8125 29.9782H31.6875" stroke="black" stroke-width="1.1"/>
-                                </svg>    
+                            <button class="btn-item" renderValue="\frac{\differentialD\placeholder{⬚}}{\differentialD x}">
+                                <svg renderValue="\frac{\differentialD\placeholder{⬚}}{\differentialD x}" width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.428 27.6106C11.3435 27.6106 12.0698 27.1589 12.4788 26.4265H12.4971V27.5007H13.5103V18.6934H12.4482V22.1846H12.4238C12.0454 21.4888 11.313 21.0432 10.4036 21.0432C8.80444 21.0432 7.71191 22.3372 7.71191 24.3269C7.71191 26.3167 8.81055 27.6106 10.428 27.6106ZM10.6294 21.9771C11.7219 21.9771 12.4543 22.9109 12.4543 24.3269C12.4543 25.749 11.7219 26.6768 10.6294 26.6768C9.50635 26.6768 8.79834 25.7673 8.79834 24.3269C8.79834 22.8926 9.50635 21.9771 10.6294 21.9771Z" fill="black"/>
+                                    <path d="M19.1023 25.0837L20.6221 27.5007H21.8L19.6882 24.2842L21.8306 21.1531H20.6465L19.1389 23.5334H19.1145L17.5886 21.1531H16.4045L18.5286 24.3269L16.3679 27.5007H17.5459L19.0779 25.0837H19.1023Z" fill="black"/>
+                                    <path d="M9.42798 13.2773C10.3435 13.2773 11.0698 12.8257 11.4788 12.0933H11.4971V13.1675H12.5103V4.36011H11.4482V7.85132H11.4238C11.0454 7.15552 10.313 6.70996 9.40356 6.70996C7.80444 6.70996 6.71191 8.00391 6.71191 9.99365C6.71191 11.9834 7.81055 13.2773 9.42798 13.2773ZM9.62939 7.6438C10.7219 7.6438 11.4543 8.57764 11.4543 9.99365C11.4543 11.4158 10.7219 12.3435 9.62939 12.3435C8.50635 12.3435 7.79834 11.4341 7.79834 9.99365C7.79834 8.55933 8.50635 7.6438 9.62939 7.6438Z" fill="black"/>
+                                    <path d="M25.7499 3.91763H16.5833V13.0843H25.7499V3.91763Z" stroke="#919191" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
+                                    <path d="M3 17.4173H28.3333" stroke="black" stroke-width="1.2"/>
+                                </svg>                                                                        
                             </button>
                         </div>
         
                         <div id="item-container">
-                            <button class="btn-item">
-                                <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button class="btn-item" renderValue="\prod_{\placeholder{⬚}}^{\placeholder{⬚}}\placeholder{⬚}">
+                                <svg renderValue="\prod_{\placeholder{⬚}}^{\placeholder{⬚}}\placeholder{⬚}" width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M14.5254 20.9995V10.4307H6.02539V20.9995H7.37698V11.6172H13.1738V20.9995H14.5254Z" fill="black"/>
                                     <path d="M13.0835 1.41667H7.25012V7.25H13.0835V1.41667Z" stroke="#919191" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
                                     <path d="M13.0835 23.4162H7.25012V29.2495H13.0835V23.4162Z" stroke="#919191" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>

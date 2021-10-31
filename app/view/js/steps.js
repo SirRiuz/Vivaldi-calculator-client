@@ -4,46 +4,49 @@
 
 
 
+
 function onCloceDialog() {
   document.getElementById('icon-container').addEventListener('click',(e) => {
     document.getElementById('modal-step').style.display = 'none'
   })
-} 
-
-
-function onShowModal() {
-  printData()
 }
 
 
 
+function onShow() {
+  document.getElementById('show').addEventListener('click',(e) => {
+    //alert(e.target.attributes.mode.value)
+    document.getElementById('modal-step').style.display = 'block'
+    printData(e.target.attributes.mode.value)
+  })
+}
 
-function printData() {
+
+
+function printData(mode) {
 
   const el = document.getElementById('step-body')
   el.innerHTML = '<div id="load">Cargando ...</div>'
 
   onGetSteps({
-    latex:'\\frac{3x^2}{x-1}',
-    mode:'dif'
+    latex:document.getElementById('operation').value,
+    mode:mode
   },(data) => {
     el.innerHTML = ''
     data.steps.map((i,x) => {
       
       var titleResult = ''
-      
+
       i.title.map((i,x) => {
         if (x >= 1){
           titleResult += `<math-field id="title-sec">${i}</math-field>`
         } else {
           titleResult += `<math-field id="title">${i}</math-field>`
         }
-        
       })
 
-
-      console.log(titleResult)
-      console.log('\n\n')
+      // console.log(titleResult)
+      // console.log('\n\n')
       
       el.innerHTML += `<div class="step-item">
       <div id="rule-container">
@@ -60,7 +63,8 @@ function printData() {
 
 
 onCloceDialog()
-onShowModal()
+onShow()
+//onShowModal()
 
 
 

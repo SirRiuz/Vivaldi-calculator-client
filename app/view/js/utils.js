@@ -4,6 +4,7 @@ function getOperation() {
 
   const el = document.getElementById('operation')
   var operation = 'eval'
+  console.log(el.value)
   
   if(el.value.match('lim') == 'lim') {
     operation = 'limit'
@@ -15,6 +16,14 @@ function getOperation() {
 
   if(el.value.match('y = ') == 'y = ') {
     operation = 'derivate'
+  }
+
+  if(el.value.match('prod') == 'prod') {
+    operation = 'sum'
+  }
+
+  if(el.value.match('sum') == 'sum') {
+    operation = 'sum'
   }
 
   if(el.value.match('y=') == 'y=') {
