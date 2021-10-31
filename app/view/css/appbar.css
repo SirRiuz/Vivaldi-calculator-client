@@ -21,7 +21,6 @@
 @media 
 only screen and (max-width: 650px) {
     #header-container{
-        background: red;
         height: 230px;
     }
 } 
@@ -30,7 +29,6 @@ only screen and (max-width: 650px) {
 @media 
 only screen and (max-width: 375px) {
     #header-container{
-        background: black;
         height: 180px;
     }
 } 
