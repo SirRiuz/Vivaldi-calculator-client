@@ -61,7 +61,10 @@ only screen and (max-width: 375px) {
 
 
 #show {
-    width: 100%;
+    z-index: 999;
+    position: absolute;
+    top: 0px;
+    left: 0px;
     margin-top: 36px;
     margin-left:10px ;
 }
