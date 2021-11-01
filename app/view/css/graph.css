@@ -32,7 +32,7 @@
     height: 100%;
     overflow: hidden;
     position: absolute;
-    z-index: 99;
+    z-index: 9999;
 }
 
 

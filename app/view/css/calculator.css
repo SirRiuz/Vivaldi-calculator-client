@@ -69,6 +69,7 @@
 
 
 #item-container-options{
+    visibility: hidden;
     display: flex;
     justify-content: flex-start;
 }

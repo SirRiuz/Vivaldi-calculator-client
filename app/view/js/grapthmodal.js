@@ -14,8 +14,7 @@ class Modal3dController {
     document.getElementById('canvas-3d-preview').style.display = 'none'
     document.getElementById('show').style.display = 'none'
     document.getElementById('result').textContent = '\\,'
-    document.getElementById('operation').textContent = '\\,'
-    document.getElementById('grapth-canvas-modal-3d').style.display = 'block'
+    //document.getElementById('operation').textContent = '\\,'
     
     
     onGrapth3d({
@@ -32,6 +31,9 @@ class Modal3dController {
       el.style.backgroundRepeat = 'no-repeat'
       el.style.backgroundPosition = 'center'
       el.style.backgroundSize = 'contain'
+
+      document.getElementById('grapth-canvas-modal-3d').style.display = 'block'
+
     })
 
   }
