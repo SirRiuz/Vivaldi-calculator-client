@@ -30,6 +30,10 @@ function getOperation() {
     operation = 'derivate'
   }
 
+  if(el.value.match('differentialD') == 'differentialD') {
+    operation = 'derivate'
+  }
+
   return operation
 }
 

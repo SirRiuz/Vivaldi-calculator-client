@@ -154,15 +154,14 @@ function onCalculate() {
         operation:getOperation(),
         mode:'deg'
       },(e) => {
-        if(e.data.status == 'ok') {
-          document.getElementById('show').style.display = 'block'
+        if(e.datblocka.status == 'ok') {
+          document.getElementById('show').style.display = 'none'
           document.getElementById('operation').innerText = e.data.latex
           document.getElementById('result').style.display = 'none'
         } else {
           if(e.data.result['type-error'] == 'syntax.error') {
             document.getElementById('operation').innerText = 'Error_en_la_sintaxis'
-            document.getElementById('result').innerText = ''
-          }
+            document.getElementById('result').innerText = ''          }
 
           if(e.data.result['type-error'] == 'zero.division') {
             document.getElementById('operation').innerHTML = 'No es posible dividir entre 0'
