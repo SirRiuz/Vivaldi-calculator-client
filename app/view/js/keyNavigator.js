@@ -2,6 +2,7 @@
 
 
 
+
 function onClickButton() {
 
   /*
@@ -18,6 +19,8 @@ function onClickButton() {
     
     if(btnsItemsList[x] != undefined){
       btnsItemsList[x].addEventListener('click',(e) => {
+
+        document.getElementById('operation').focus()
                 
         if(document.getElementById('result').style.display == 'none'){
           document.getElementById('result').style.display = 'block'
@@ -57,6 +60,8 @@ function onClickButton() {
 
     if(basicOperationsList[x] != undefined){
       basicOperationsList[x].addEventListener('click',(e) => {
+
+        document.getElementById('operation').focus()
 
         if(document.getElementById('result').style.display == 'none'){
           document.getElementById('result').style.display = 'block'
@@ -180,10 +185,13 @@ function onNavigation() {
   
   for(var x = 0;x<results.length;x++){
     results[x].addEventListener('click',(e) => {
+      document.getElementById('operation').focus()
+
       if(e.target.attributes.orientation.nodeValue == 'left') {
         document.getElementById('operation').executeCommand('moveToPreviousChar');
       } else {
         document.getElementById('operation').executeCommand('moveToNextChar');
+        document.getElementById('operation').executeCommand('nextSuggestion');
       }
     })
   }
@@ -195,6 +203,7 @@ function onDelete(){
   
   var el = document.getElementById('btn-item-back')
   el.addEventListener('click',() => {
+    document.getElementById('operation').focus()
     document.getElementById('operation').executeCommand('deleteBackward')
     document.getElementById('result').innerText = `\\, \\, `
     document.getElementById('show').style.display = 'none'
