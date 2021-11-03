@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <span class="hljs-tag"><meta name="viewport" content="target-densitydpi=device-dpi, initial-scale=1.0, user-scalable=no" />
     <title>Vivaldi</title>
+    <link rel="stylesheet" href="./css/tutorial-modal.css">
     <link rel="stylesheet" href="./css/appbar.css">
     <link rel="stylesheet" href="./css/graph.css">
     <link rel="stylesheet" href="./css/body.css">
@@ -21,6 +22,21 @@
 </head>
 <body>
 
+    <div id="tutorial-modal-container">
+        <div id="tutorial-screen"></div>
+        <div id="tutorial-modal">
+            <div id="body-modal">
+                <div style="display: flex;justify-content: center;align-items: center;">
+                    <svg width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M29.9832 19.6331L11.1401 28.3711L13.2349 19.6331L11.1401 10.895L29.9832 19.6331ZM12.9302 13.1117L14.3488 19.0294H25.6794L12.9302 13.1117ZM14.3298 20.2961L12.9302 26.1544L25.5652 20.2961H14.3298Z" fill="white"></path>
+                    </svg>
+                </div>
+                <div style="color:white">
+                    <p>Mantenga presionado el botón "enviar" para abrir el menú</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="modal-step" id="modal-step">
         <div id="icon-container">
@@ -396,6 +412,7 @@
     <script src="./js/utils.js"></script>
     <script src="./js/grapthmodal.js"></script>
     <script src="./js/api.js"></script>
+    <script src="./js/tmodal.js"></script>
     <script src="./js/keyNavigator.js"></script>
     <script src="./js/modal.js"></script>
     <script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
