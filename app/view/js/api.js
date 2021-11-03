@@ -1,7 +1,7 @@
 
 
 
-const BASEURL = 'http://localhost:8000/'
+const BASEURL = 'https://vivaldi-api-client.herokuapp.com/'
 
 
 
