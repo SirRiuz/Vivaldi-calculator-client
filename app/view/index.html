@@ -153,9 +153,7 @@
                             =
                         </button>
                         
-                        <button class="btn-item">
-                            C
-                        </button>
+                        <button id="clear-all">C</button>
                     </div>
                     <div id="item-container">
                         <button class="btn-item" renderValue=" \log(">log</button>
@@ -292,22 +290,22 @@
                 <div id="generic-buttons-container">
                     <div>
                         <div id="item-container">
-                            <button class="btn-item" renderValue=" \int_\placeholder{⬚}^\placeholder{⬚}\placeholder{⬚}">
-                                <svg renderValue=" \int_\placeholder{⬚}^\placeholder{⬚}\placeholder{⬚}" width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button class="btn-item" renderValue=" \int_\placeholder{⬚}^\placeholder{⬚}(\placeholder{⬚}">
+                                <svg renderValue=" \int_\placeholder{⬚}^\placeholder{⬚}(\placeholder{⬚}" width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5.12765 24C7.22339 24 8.24467 23.0473 8.56381 20.8582L10.2659 9.22297C10.4468 8.00676 10.9893 7.4696 11.9787 7.4696C12.4468 7.4696 12.7872 7.5304 13 7.58108V6.12162C12.6596 6.05068 12.2979 6 11.8723 6C9.77659 6 8.75531 6.9527 8.43616 9.14189L6.73404 20.7771C6.55319 21.9933 6.01063 22.5304 5.02128 22.5304C4.5532 22.5304 4.21277 22.4696 4 22.4189V23.8783C4.34043 23.9494 4.70213 24 5.12765 24Z" fill="black"/>
                                     <path d="M28.9945 9.94872H19.6195V19.3237H28.9945V9.94872Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.7 0.51"/>
                                     <path d="M20.3012 21.8808H14.3353V27.8467H20.3012V21.8808Z" stroke="#767676" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="1.7 0.51"/>
                                     <path d="M22.8584 1.42638H16.8925V7.39229H22.8584V1.42638Z" stroke="#767676" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="1.7 0.51"/>
                                 </svg>                                  
                             </button>
-                            <button class="btn-item" renderValue=" \int\placeholder{⬚}">
-                                <svg renderValue="\int\placeholder{⬚}" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button class="btn-item" renderValue=" \int(\placeholder{⬚}">
+                                <svg renderValue="\int(\placeholder{⬚}" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8.14354 31.7881C10.48 31.7881 11.6186 30.599 11.9744 27.8664L13.872 13.3431C14.0737 11.825 14.6785 11.1545 15.7815 11.1545C16.3033 11.1545 16.6829 11.2304 16.9201 11.2937V9.47192C16.5406 9.38337 16.1373 9.32011 15.6629 9.32011C13.3265 9.32011 12.1878 10.5093 11.8321 13.2419L9.93443 27.7652C9.7328 29.2833 9.12794 29.9538 8.02493 29.9538C7.50308 29.9538 7.12356 29.8779 6.88635 29.8146V31.6364C7.26588 31.7249 7.66913 31.7881 8.14354 31.7881Z" fill="black"/>
                                     <path d="M31.5428 16.8042H20.41V28.2474H31.5428V16.8042Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.7 0.51"/>
                                 </svg>
                             </button>
-                            <button class="btn-item" renderValue=" \lim_{\placeholder{⬚}\to\placeholder{⬚}}(">
-                                <svg renderValue="\lim_{\placeholder{⬚}\to \placeholder{⬚}}(" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button class="btn-item" renderValue=" \lim_{\placeholder{⬚}\to\placeholder{⬚}}(\placeholder{⬚}">
+                                <svg renderValue="\lim_{\placeholder{⬚}\to \placeholder{⬚}}(\placeholder{⬚}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.2993 20.2667H12.5936V9.11066H11.2993V20.2667ZM15.3389 10.796C15.7927 10.796 16.1498 10.4172 16.1498 9.95335C16.1498 9.48174 15.7927 9.11066 15.3389 9.11066C14.8926 9.11066 14.5281 9.48174 14.5281 9.95335C14.5281 10.4172 14.8926 10.796 15.3389 10.796ZM14.6918 20.2667H15.9861V12.2263H14.6918V20.2667ZM18.0173 20.2667H19.3116V15.226C19.3116 14.1127 20.0554 13.2777 21.0819 13.2777C22.0416 13.2777 22.6664 13.9117 22.6664 14.878V20.2667H23.9608V15.1564C23.9608 14.0663 24.6823 13.2777 25.7088 13.2777C26.7279 13.2777 27.3156 13.9271 27.3156 15.0249V20.2667H28.6099V14.7157C28.6099 13.1232 27.6205 12.0871 26.0882 12.0871C25.0022 12.0871 24.0946 12.6592 23.6631 13.6179H23.6334C23.2987 12.6438 22.5176 12.0871 21.4613 12.0871C20.4199 12.0871 19.6314 12.6592 19.267 13.5096H19.2371V12.2263H18.0173V20.2667Z" fill="black"/>
                                     <path d="M13.7109 23.5387H6.60156V30.9276H13.7109V23.5387Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
                                     <path d="M32.8052 23.5387H25.6958V30.9276H32.8052V23.5387Z" stroke="#767676" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
@@ -317,8 +315,8 @@
                         </div>
         
                         <div id="item-container">
-                            <button class="btn-item" renderValue="\lim_{\placeholder{⬚}\to\placeholder{⬚}^+}(">
-                                <svg renderValue="\lim_{\placeholder{⬚}\to\placeholder{⬚}^+}(" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button class="btn-item" renderValue="\lim_{\placeholder{⬚}\to\placeholder{⬚}^\placeholder{⬚}}(\placeholder{⬚}">
+                                <svg renderValue="\lim_{\placeholder{⬚}\to\placeholder{⬚}^\placeholder{⬚}}(\placeholder{⬚}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M35.4468 24.426H37.8391V23.4241H35.4468V20.814H34.4827V23.4241H32.0905V24.426H34.4827V27.036H35.4468V24.426Z" fill="black"/>
                                     <path d="M7.84595 20.2667H9.14028V9.11066H7.84595V20.2667ZM11.8856 10.796C12.3393 10.796 12.6964 10.4172 12.6964 9.95335C12.6964 9.48174 12.3393 9.11066 11.8856 9.11066C11.4392 9.11066 11.0747 9.48174 11.0747 9.95335C11.0747 10.4172 11.4392 10.796 11.8856 10.796ZM11.2384 20.2667H12.5327V12.2263H11.2384V20.2667ZM14.5639 20.2667H15.8582V15.226C15.8582 14.1127 16.602 13.2777 17.6286 13.2777C18.5882 13.2777 19.2131 13.9117 19.2131 14.878V20.2667H20.5074V15.1564C20.5074 14.0663 21.2289 13.2777 22.2554 13.2777C23.2746 13.2777 23.8622 13.9271 23.8622 15.0249V20.2667H25.1565V14.7157C25.1565 13.1232 24.1672 12.0871 22.6348 12.0871C21.5488 12.0871 20.6412 12.6592 20.2098 13.6179H20.18C19.8454 12.6438 19.0643 12.0871 18.008 12.0871C16.9665 12.0871 16.178 12.6592 15.8136 13.5096H15.7839V12.2263H14.5639V20.2667Z" fill="black"/>
                                     <path d="M10.2576 23.5387H3.14819V30.9276H10.2576V23.5387Z" stroke="#919191" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
@@ -326,8 +324,8 @@
                                     <path d="M19.7155 27.4573C19.8344 27.3335 19.8344 27.1331 19.7155 27.0094L17.7764 24.9941C17.6575 24.8705 17.4646 24.8705 17.3455 24.9941C17.2265 25.1179 17.2265 25.3184 17.3455 25.442L19.0691 27.2333L17.3455 29.0247C17.2265 29.1483 17.2265 29.3488 17.3455 29.4725C17.4646 29.5962 17.6575 29.5962 17.7764 29.4725L19.7155 27.4573ZM13.4062 27.55H19.5V26.9167H13.4062V27.55Z" fill="black"/>
                                 </svg>    
                             </button>
-                            <button class="btn-item" renderValue=" \sum_{\placeholder{⬚}}^{\placeholder{⬚}}\placeholder{⬚}">
-                                <svg renderValue="\sum_{\placeholder{⬚}}^{\placeholder{⬚}}\placeholder{⬚}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button class="btn-item" renderValue=" \sum_{\placeholder{⬚}}^{\placeholder{⬚}}(\placeholder{⬚}">
+                                <svg renderValue="\sum_{\placeholder{⬚}}^{\placeholder{⬚}}(\placeholder{⬚}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0)">
                                     <path d="M8.91446 25.243L12.4315 20.0013V19.9364L9.11085 14.9915V14.9267H15.9752V13.4238H7.12026V14.7411L10.7087 20.0848L6.96851 25.6234V26.8109H16.2252V25.308H8.91446V25.243Z" fill="black"/>
                                     <path d="M15.3362 2.06111H8.22681V9.45H15.3362V2.06111Z" stroke="#919191" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
@@ -341,8 +339,8 @@
                                     </defs>
                                 </svg>                                    
                             </button>
-                            <button class="btn-item" renderValue="\frac{\differentialD\placeholder{⬚}}{\differentialD x}(">
-                                <svg renderValue="\frac{\differentialD\placeholder{⬚}}{\differentialD x}(" width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button class="btn-item" renderValue="\frac{\differentialD\placeholder{⬚}}{\differentialD x}(\placeholder{⬚}">
+                                <svg renderValue="\frac{\differentialD\placeholder{⬚}}{\differentialD x}(\placeholder{⬚}" width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10.428 27.6106C11.3435 27.6106 12.0698 27.1589 12.4788 26.4265H12.4971V27.5007H13.5103V18.6934H12.4482V22.1846H12.4238C12.0454 21.4888 11.313 21.0432 10.4036 21.0432C8.80444 21.0432 7.71191 22.3372 7.71191 24.3269C7.71191 26.3167 8.81055 27.6106 10.428 27.6106ZM10.6294 21.9771C11.7219 21.9771 12.4543 22.9109 12.4543 24.3269C12.4543 25.749 11.7219 26.6768 10.6294 26.6768C9.50635 26.6768 8.79834 25.7673 8.79834 24.3269C8.79834 22.8926 9.50635 21.9771 10.6294 21.9771Z" fill="black"/>
                                     <path d="M19.1023 25.0837L20.6221 27.5007H21.8L19.6882 24.2842L21.8306 21.1531H20.6465L19.1389 23.5334H19.1145L17.5886 21.1531H16.4045L18.5286 24.3269L16.3679 27.5007H17.5459L19.0779 25.0837H19.1023Z" fill="black"/>
                                     <path d="M9.42798 13.2773C10.3435 13.2773 11.0698 12.8257 11.4788 12.0933H11.4971V13.1675H12.5103V4.36011H11.4482V7.85132H11.4238C11.0454 7.15552 10.313 6.70996 9.40356 6.70996C7.80444 6.70996 6.71191 8.00391 6.71191 9.99365C6.71191 11.9834 7.81055 13.2773 9.42798 13.2773ZM9.62939 7.6438C10.7219 7.6438 11.4543 8.57764 11.4543 9.99365C11.4543 11.4158 10.7219 12.3435 9.62939 12.3435C8.50635 12.3435 7.79834 11.4341 7.79834 9.99365C7.79834 8.55933 8.50635 7.6438 9.62939 7.6438Z" fill="black"/>
@@ -353,8 +351,8 @@
                         </div>
         
                         <div id="item-container">
-                            <button class="btn-item" renderValue="\prod_{\placeholder{⬚}}^{\placeholder{⬚}}\placeholder{⬚}">
-                                <svg renderValue="\prod_{\placeholder{⬚}}^{\placeholder{⬚}}\placeholder{⬚}" width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button class="btn-item" renderValue="\prod_{\placeholder{⬚}}^{\placeholder{⬚}}(\placeholder{⬚}">
+                                <svg renderValue="\prod_{\placeholder{⬚}}^{\placeholder{⬚}}(\placeholder{⬚}" width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M14.5254 20.9995V10.4307H6.02539V20.9995H7.37698V11.6172H13.1738V20.9995H14.5254Z" fill="black"/>
                                     <path d="M13.0835 1.41667H7.25012V7.25H13.0835V1.41667Z" stroke="#919191" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
                                     <path d="M13.0835 23.4162H7.25012V29.2495H13.0835V23.4162Z" stroke="#919191" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>

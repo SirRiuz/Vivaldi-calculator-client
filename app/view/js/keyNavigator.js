@@ -26,6 +26,7 @@ function onClickButton() {
           document.getElementById('result').style.display = 'block'
         }
 
+
         if(e.target.attributes.rendervalue){
           document.getElementById('operation').executeCommand(['insert', e.target.attributes.rendervalue.value]);
           //document.getElementById('operation').innerText = document.getElementById('operation').value + e.target.attributes.rendervalue.value
@@ -202,12 +203,25 @@ function onNavigation() {
 function onDelete(){
   
   var el = document.getElementById('btn-item-back')
+  var clearAll = document.getElementById('clear-all')
+
   el.addEventListener('click',() => {
     document.getElementById('operation').focus()
     document.getElementById('operation').executeCommand('deleteBackward')
     document.getElementById('result').innerText = `\\, \\, `
     document.getElementById('show').style.display = 'none'
   })
+
+
+  clearAll.addEventListener('click',() => {
+    document.getElementById('operation').focus()
+    document.getElementById('operation').value = ''
+    document.getElementById('result').value = ''
+    document.getElementById('show').style.display = 'none'
+  })
+
+
+  
 }
 
 

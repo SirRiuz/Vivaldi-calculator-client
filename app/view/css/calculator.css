@@ -23,6 +23,9 @@
 }
 
 .btn-item-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Ubuntu', sans-serif;    background: rgba(220, 220, 220,.90);
     border: solid 0px;
     margin-right: 10px;
@@ -39,6 +42,26 @@
 
 
 #btn-item-opacity-equals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;    background: rgba(220, 220, 220,.90);
+    border: solid 0px;
+    margin-right: 10px;
+    width: 75px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#clear-all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Ubuntu', sans-serif;    background: rgba(220, 220, 220,.90);
     border: solid 0px;
     margin-right: 10px;
@@ -55,6 +78,9 @@
 
 
 .btn-item-opacity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Ubuntu', sans-serif;    background: rgba(220, 220, 220,.90);
     border: solid 0px;
     margin-right: 10px;
@@ -82,6 +108,9 @@
 
 
 .btn-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Ubuntu', sans-serif;    background: #FFFFFF;
     border: solid 0px;
     box-shadow: 0px 5px 5px rgba(224, 224, 224,.35);
@@ -98,10 +127,14 @@
 
 
 #btn-item-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Ubuntu', sans-serif;    background: #FFFFFF;
     border: solid 0px;
     box-shadow: 0px 5px 5px rgba(224, 224, 224,.35);
     margin-right: 7px;
+    background: rgba(220, 220, 220,.90);
     width: 75px;
     height: 40px;
     font-size: 18px;
@@ -201,6 +234,10 @@ button {
     #btn-item-opacity-equals{
         width: 50px;
     }
+    #clear-all{
+        width: 50px;
+    }
+
 }
 
 
@@ -232,6 +269,9 @@ button {
         width: 38px;
     }
     #btn-item-opacity-equals{
+        width: 38px;
+    }
+    #clear-all{
         width: 38px;
     }
 }
