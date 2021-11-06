@@ -33,29 +33,35 @@ function printData(mode) {
     mode:mode
   },(data) => {
     el.innerHTML = ''
-    data.steps.map((i,x) => {
-      
-      var titleResult = ''
 
-      i.title.map((i,x) => {
-        if (x >= 1){
-          titleResult += `<math-field id="title-sec">${i}</math-field>`
-        } else {
-          titleResult += `<math-field id="title">${i}</math-field>`
-        }
+
+    if(data.steps.length > 0) {
+      data.steps.map((i,x) => {
+      
+        var titleResult = ''
+  
+        i.title.map((i,x) => {
+          if (x >= 1){
+            titleResult += `<math-field id="title-sec">${i}</math-field>`
+          } else {
+            titleResult += `<math-field id="title">${i}</math-field>`
+          }
+        })
+  
+        // console.log(titleResult)
+        // console.log('\n\n')
+        
+        el.innerHTML += `<div class="step-item">
+        <div id="rule-container">
+          ${titleResult}
+        </div>
+        <math-field id="latex-result">= ${i.result}</math-field>
+        <div class="separator"></div>
+      </div>`
       })
-
-      // console.log(titleResult)
-      // console.log('\n\n')
-      
-      el.innerHTML += `<div class="step-item">
-      <div id="rule-container">
-        ${titleResult}
-      </div>
-      <math-field id="latex-result">= ${i.result}</math-field>
-      <div class="separator"></div>
-    </div>`
-    })
+    } else {
+      el.innerHTML = `<div id="error-messege"> <h1>:(</h1> No se pudo obtener el procedimiento de esta operacion </div>`
+    }
   })
 }
 

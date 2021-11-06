@@ -77,6 +77,7 @@ function onRequest(data,callback) {
 
   params.append('latex',data.latex)
   params.append('operation',data.operation)
+  params.append('modeMath',data.mode)
 
   fetch(url,{
     method:'POST',

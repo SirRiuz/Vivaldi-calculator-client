@@ -16,8 +16,10 @@
 
 
 #step-body{
-    margin-top: 100px;
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -69,11 +71,16 @@
     justify-content: center;
 }
 
+#error-messege{
+    text-align: center;
+}
+
 
 
 .step-item{
-    border-bottom: solid 2px rgba(0, 0, 0, 0.05);
+    border-bottom: solid 1.5px rgba(0, 0, 0, 0.05);
     margin-bottom: 50px;
+    width: 50%;
 }
 
 

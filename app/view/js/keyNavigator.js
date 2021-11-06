@@ -14,6 +14,36 @@ function onClickButton() {
   const btnsItemsList = document.getElementsByClassName('btn-item')
   const basicOperationsList = document.getElementsByClassName('btn-item-opacity')
 
+
+  document.getElementById('btn-deg-mode').addEventListener('click',(e) => {
+    if(e.target.attributes.mode.value == 'deg'){ 
+      e.target.innerHTML = 'rad'
+      e.target.attributes.mode.value = 'rad'
+    } else {
+      e.target.innerHTML = 'deg'
+      e.target.attributes.mode.value = 'deg'
+    }
+    onRequest({
+      latex:document.getElementById('operation').value,
+      operation:getOperation(),
+      mode:document.getElementById('btn-deg-mode').attributes.mode.value
+    },(e) => {
+
+      if(e.status != 'error') {
+        if(e.data.showSteps) {
+          document.getElementById('show').style.display = 'block'
+          document.getElementById('show-icon').setAttribute('mode',e.data.stepMode)
+        }
+        document.getElementById('result').innerText = `=${e.data.latex}`
+      } else {
+        document.getElementById('result').innerText = `\\, \\, `
+        document.getElementById('show').style.display = 'none'
+      }
+
+    })
+  })
+
+
   
   for(var x=0;x<=btnsItemsList.length;x++) {
     
@@ -35,10 +65,11 @@ function onClickButton() {
           //document.getElementById('operation').innerText = document.getElementById('operation').value + e.target.textContent
         }
 
+
         onRequest({
           latex:document.getElementById('operation').value,
           operation:getOperation(),
-          mode:'deg'
+          mode:document.getElementById('btn-deg-mode').attributes.mode.value
         },(e) => {
 
           if(e.status != 'error') {
@@ -76,10 +107,11 @@ function onClickButton() {
           //document.getElementById('operation').innerText = document.getElementById('operation').value + e.target.textContent
         }
 
+
         onRequest({
           latex:document.getElementById('operation').value,
           operation:getOperation(),
-          mode:'deg'
+          mode:document.getElementById('btn-deg-mode').attributes.mode.value
         },(e) => {
 
           if(e.status != 'error') {
@@ -155,10 +187,11 @@ function onCalculate() {
       //onRequest('','eval')
       document.getElementById('operation').innerText = document.getElementById('operation').value
 
+
       onRequest({
         latex:document.getElementById('operation').textContent,
         operation:getOperation(),
-        mode:'deg'
+        mode:document.getElementById('btn-deg-mode').attributes.mode.value
       },(e) => {
         if(e.datblocka.status == 'ok') {
           document.getElementById('show').style.display = 'none'

@@ -97,7 +97,6 @@
 
 
 #item-container-options{
-    visibility: hidden;
     display: flex;
     justify-content: flex-start;
 }
@@ -125,6 +124,23 @@
     margin-bottom: 10px;
 }
 
+
+#btn-deg-mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;    background: #FFFFFF;
+    border: solid 0px;
+    box-shadow: 0px 5px 5px rgba(224, 224, 224,.35);
+    margin-right: 7px;
+    width: 75px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
 
 
 #btn-item-back {
@@ -239,6 +255,10 @@ button {
         width: 50px;
     }
 
+    #btn-deg-mode{
+        width: 50px;
+    }
+
 }
 
 
@@ -251,7 +271,6 @@ button {
     #generic-buttons-container{
         margin-top: 0px;
         padding-top: 5px;
-
     }
     #root-container{
         gap: 2px;
@@ -274,5 +293,45 @@ button {
     }
     #clear-all{
         width: 38px;
+    }
+    #btn-deg-mode{
+        width: 38px;
+    }
+}
+
+
+
+@media 
+only screen and (max-width: 325px) {
+    #generic-buttons-container{
+        margin-top: 5px;
+        padding-top: 0px;
+    }
+    #root-container{
+        gap: 5px;
+    }
+    .btn-item-opacity{
+        width: 31px;
+    }
+
+    .btn-item {
+        width: 31px;
+    }
+
+    #clear-all{
+        width: 31px;
+    }
+
+    #btn-item-back{
+        width: 31px;
+    }
+    #btn-item-opacity-equals{
+        width: 31px;
+    }
+    .btn-item-nav{
+        width: 31px;
+    }
+    #btn-deg-mode{
+        width: 31px;
     }
 }

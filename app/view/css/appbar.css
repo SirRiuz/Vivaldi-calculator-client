@@ -35,6 +35,16 @@ only screen and (max-width: 375px) {
 
 
 
+@media 
+only screen and (max-height: 650px) {
+    #header-container{
+        height: 135px;
+    }
+} 
+
+
+
+
 
 
 
