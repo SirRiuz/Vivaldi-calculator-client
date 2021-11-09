@@ -1,4 +1,27 @@
 
+function onClickKeyButton() {
+  document.getElementById('operation').addEventListener('keyup',(e) => {
+    if(!document.getElementById('operation').value == '') {
+      onRequest({
+        latex:document.getElementById('operation').value,
+        operation:getOperation(),
+        mode:document.getElementById('btn-deg-mode').attributes.mode.value
+      },(e) => {
+  
+        if(e.status != 'error') {
+          if(e.data.showSteps) {
+            document.getElementById('show').style.display = 'block'
+            document.getElementById('show-icon').setAttribute('mode',e.data.stepMode)
+          }
+          document.getElementById('result').innerText = `=${e.data.latex}`
+        } else {
+          document.getElementById('result').innerText = `\\, \\, `
+          document.getElementById('show').style.display = 'none'
+        }
+      })
+    }
+  })
+}
 
 
 
@@ -259,12 +282,11 @@ function onDelete(){
 
 
 
-
 onCalculate()
 onClickButton()
 onDelete()
 onNavigation()
-
+onClickKeyButton()
 
 
 

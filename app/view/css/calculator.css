@@ -307,31 +307,35 @@ only screen and (max-width: 325px) {
         margin-top: 5px;
         padding-top: 0px;
     }
-    #root-container{
-        gap: 5px;
-    }
     .btn-item-opacity{
         width: 31px;
+        height: 35px;
     }
 
     .btn-item {
         width: 31px;
+        height: 35px;
     }
 
     #clear-all{
         width: 31px;
+        height: 35px;
     }
 
     #btn-item-back{
         width: 31px;
+        height: 35px;
     }
     #btn-item-opacity-equals{
         width: 31px;
+        height: 35px;
     }
     .btn-item-nav{
         width: 31px;
+        height: 35px;
     }
     #btn-deg-mode{
         width: 31px;
+        height: 35px;
     }
 }

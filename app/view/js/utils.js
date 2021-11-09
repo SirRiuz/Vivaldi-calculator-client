@@ -4,7 +4,6 @@ function getOperation() {
 
   const el = document.getElementById('operation')
   var operation = 'eval'
-  console.log(el.value)
   
   if(el.value.match('lim') == 'lim') {
     operation = 'limit'
