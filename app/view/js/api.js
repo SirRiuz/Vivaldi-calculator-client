@@ -1,7 +1,7 @@
 
 
 
-const BASEURL = 'https://vivaldi-api-client.herokuapp.com/'
+const BASEURL = 'http://127.0.0.1:8000/'
 
 
 
@@ -11,8 +11,9 @@ function onGetSteps(data,callback){
   var url = `${BASEURL}api/v1/steps/`
   var params = new FormData()
 
-  console.log(data)
-  params.append('mode',data.mode)
+  if(data.mode != undefined){
+    params.append('mode',data.mode)    
+  }
   params.append('latex',data.latex)
 
   fetch(url,{

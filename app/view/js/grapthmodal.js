@@ -2,7 +2,11 @@
 
 
 
-class Modal3dController {
+class ModalController {
+
+  constructor(modeRender){
+    this.modeRender = modeRender
+  }
 
   closeModal() {
     document.getElementById('screen-modal-m').addEventListener('click',(e) => {
@@ -19,7 +23,7 @@ class Modal3dController {
     
     onGrapth3d({
       latex:document.getElementById('operation').value,
-      mode:'3d'
+      mode:this.modeRender
     },(e) => {
 
 
@@ -65,6 +69,6 @@ function openGraphModal() {
 
 
 closeModal()
-new Modal3dController().closeModal()
+new ModalController().closeModal()
 
 

@@ -1,4 +1,38 @@
 
+
+
+function showResult(e) {
+  if(e.status != 'error') {
+    if(e.data.showSteps) {
+      document.getElementById('show').style.display = 'block'
+      document.getElementById('show-icon').setAttribute('mode',e.data.stepMode)
+    }
+    document.getElementById('result').innerText = `=${e.data.latex}`
+
+    console.log(e.data.latex.length)
+
+    if(window.screen.availWidth >= 1000){
+      if(e.data.latex.length >= 80){
+        document.getElementById('result').style.fontSize = '18px'
+      }
+    }
+
+    if(window.screen.availWidth <= 375){
+      console.log(e.data.latex)
+      document.getElementById('result').style.fontSize = '22px'
+      if(e.data.latex.length >= 75){
+        document.getElementById('result').style.fontSize = '15px'
+      }
+    }
+  } else {
+    document.getElementById('result').innerText = `\\, \\, `
+    document.getElementById('show').style.display = 'none'
+  }
+}
+
+
+
+
 function onClickKeyButton() {
   document.getElementById('operation').addEventListener('keyup',(e) => {
     if(!document.getElementById('operation').value == '') {
@@ -22,8 +56,6 @@ function onClickKeyButton() {
     }
   })
 }
-
-
 
 
 function onClickButton() {
@@ -94,18 +126,7 @@ function onClickButton() {
           operation:getOperation(),
           mode:document.getElementById('btn-deg-mode').attributes.mode.value
         },(e) => {
-
-          if(e.status != 'error') {
-            if(e.data.showSteps) {
-              document.getElementById('show').style.display = 'block'
-              document.getElementById('show-icon').setAttribute('mode',e.data.stepMode)
-            }
-            document.getElementById('result').innerText = `=${e.data.latex}`
-          } else {
-            document.getElementById('result').innerText = `\\, \\, `
-            document.getElementById('show').style.display = 'none'
-          }
-
+          showResult(e)
         })
       })
     }

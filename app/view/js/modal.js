@@ -56,11 +56,11 @@ function onClickButonItem(ctx) {
           if(e.target.attributes.action.value == 'grapth'){
 
             if(e.target.attributes.mode.value == '3d'){
-              new Modal3dController().openGraphModal()
+              new ModalController('3d').openGraphModal()
             } 
 
             if(e.target.attributes.mode.value == '2d'){
-              openGraphModal(e.target.attributes)
+              new ModalController('2d').openGraphModal()
             }
           }
         }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="target-densitydpi=device-dpi, initial-scale=1.0, user-scalable=no" />
     <title>Vivaldi</title>
     <link rel="stylesheet" href="./css/tutorial-modal.css">
     <link rel="stylesheet" href="./css/appbar.css">
@@ -14,9 +14,11 @@
     <link rel="stylesheet" href="./css/calculator.css">
     <link rel="stylesheet" href="./css/modal.css">
     <link rel="stylesheet" href="./css/steps.css">
+    <link rel="stylesheet" href="./css/calculator-movile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="/app/assets/icon.png" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
@@ -66,10 +68,6 @@
         <div id="screen"></div>
         <div id="modal">
             
-            <div class="item-operation-modal" action="eval">
-                <span>Evaluar</span>
-            </div>
-
             <div class="item-operation-modal" action="simpli">
                 <span>Simplificar</span>
             </div>
@@ -78,24 +76,12 @@
                 <span>Factorizar</span>
             </div>
 
-            <div class="item-operation-modal" action="limit">
-                <span>Resolver limite</span>
-            </div>
-
             <div class="item-operation-modal" action="permutation">
                 <span>Resolver permutacion</span>
             </div>
 
             <div class="item-operation-modal" action="convination">
                 <span>Resolver combinación</span>
-            </div>
-
-            <div class="item-operation-modal" action="integrate">
-                <span>Integrar</span>
-            </div>
-
-            <div class="item-operation-modal" action="derivate">
-                <span>Derivar</span>
             </div>
 
             <div class="item-operation-modal" action="grapth" mode="2d">
@@ -133,6 +119,11 @@
                 <div>
                     <div id="item-container-options">
                         <button id="btn-deg-mode" mode="deg">deg</button>
+                        <button id="btn-mode" style-mode="movil">                        
+                            <svg id="svg-item" width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.6606 22.8571H1.34521V21.769L8.26486 12.5614L1.97022 4.10714V2.85155H14.7381V5.01395H5.61605L11.2559 12.4777L5.00594 20.7924H15.6606V22.8571ZM31.5594 3.71651C31.0833 3.4654 30.5327 3.33984 29.9078 3.33984C28.2212 3.33984 27.378 4.34895 27.378 6.36718V24.8103C27.378 26.2797 26.9117 27.4516 25.9791 28.3259C25.0566 29.2001 23.9058 29.6373 22.5268 29.6373C21.7827 29.6373 21.1925 29.5489 20.7559 29.3721V27.3214C21.2321 27.5633 21.7728 27.6841 22.3779 27.6841C24.0842 27.6841 24.9374 26.675 24.9374 24.6569V6.25558C24.9374 4.76748 25.3988 3.58631 26.3213 2.71205C27.2539 1.8378 28.4047 1.40067 29.7738 1.40067C30.5278 1.40067 31.123 1.48437 31.5594 1.65178V3.71651Z" fill="black"/>
+                            </svg>
+                        </button>
                     </div>
                     <div id="item-container">
                         <button class="btn-item" renderValue="^2">
@@ -338,8 +329,8 @@
                                     </defs>
                                 </svg>                                    
                             </button>
-                            <button class="btn-item" renderValue="\frac{\differentialD\placeholder{⬚}}{\differentialD x}(\placeholder{⬚}">
-                                <svg renderValue="\frac{\differentialD\placeholder{⬚}}{\differentialD x}(\placeholder{⬚}" width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button class="btn-item" renderValue="\frac{d}{\differentialD x}(\placeholder{⬚}">
+                                <svg renderValue="\frac{d}{\differentialD x}(\placeholder{⬚}" width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10.428 27.6106C11.3435 27.6106 12.0698 27.1589 12.4788 26.4265H12.4971V27.5007H13.5103V18.6934H12.4482V22.1846H12.4238C12.0454 21.4888 11.313 21.0432 10.4036 21.0432C8.80444 21.0432 7.71191 22.3372 7.71191 24.3269C7.71191 26.3167 8.81055 27.6106 10.428 27.6106ZM10.6294 21.9771C11.7219 21.9771 12.4543 22.9109 12.4543 24.3269C12.4543 25.749 11.7219 26.6768 10.6294 26.6768C9.50635 26.6768 8.79834 25.7673 8.79834 24.3269C8.79834 22.8926 9.50635 21.9771 10.6294 21.9771Z" fill="black"/>
                                     <path d="M19.1023 25.0837L20.6221 27.5007H21.8L19.6882 24.2842L21.8306 21.1531H20.6465L19.1389 23.5334H19.1145L17.5886 21.1531H16.4045L18.5286 24.3269L16.3679 27.5007H17.5459L19.0779 25.0837H19.1023Z" fill="black"/>
                                     <path d="M9.42798 13.2773C10.3435 13.2773 11.0698 12.8257 11.4788 12.0933H11.4971V13.1675H12.5103V4.36011H11.4482V7.85132H11.4238C11.0454 7.15552 10.313 6.70996 9.40356 6.70996C7.80444 6.70996 6.71191 8.00391 6.71191 9.99365C6.71191 11.9834 7.81055 13.2773 9.42798 13.2773ZM9.62939 7.6438C10.7219 7.6438 11.4543 8.57764 11.4543 9.99365C11.4543 11.4158 10.7219 12.3435 9.62939 12.3435C8.50635 12.3435 7.79834 11.4341 7.79834 9.99365C7.79834 8.55933 8.50635 7.6438 9.62939 7.6438Z" fill="black"/>
@@ -405,16 +396,15 @@
 
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.1/katex.min.js"></script>
+    <script src="./js/responsive.js"></script>
     <script src="./js/utils.js"></script>
     <script src="./js/grapthmodal.js"></script>
     <script src="./js/api.js"></script>
     <script src="./js/tmodal.js"></script>
     <script src="./js/keyNavigator.js"></script>
     <script src="./js/modal.js"></script>
-    <script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
     <script src="https://unpkg.com/mathlive/dist/mathlive.min.js"></script>
-    <script src="./js/graph.js"></script>
     <script src="./js/steps.js"></script>
 
 </body>
