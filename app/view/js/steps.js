@@ -34,12 +34,12 @@ function onShow() {
             <div id="item-${x}" class="item-container"></div>`
           if(e.data[x].title != null){
             var html = katex.renderToString(e.data[x].title, { throwOnError: false });
-            document.getElementById(`item-${x}`).innerHTML += `<p id="title">${html}</p>`
+            document.getElementById(`item-${x}`).innerHTML += `<div id="title">${html}</div>`
           }
 
           for(var y=0; y < e.data[x].steps.length;y++){
             var html = katex.renderToString(e.data[x].steps[y], { throwOnError: false });
-            document.getElementById(`item-${x}`).innerHTML += `<p>${html}</p>`
+            document.getElementById(`item-${x}`).innerHTML += `<div>${html}</div>`
           }
         }
 

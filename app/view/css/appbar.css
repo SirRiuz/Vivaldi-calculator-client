@@ -36,11 +36,38 @@ only screen and (max-width: 375px) {
 
 
 @media 
-only screen and (max-height: 650px) {
+only screen and (max-height: 860px) {
     #header-container{
-        height: 155px;
+        height: 340px;
     }
 } 
+
+
+@media 
+only screen and (max-height: 800px) {
+    #header-container{
+        height: 340px;
+    }
+} 
+
+
+@media 
+only screen and (max-height: 750px) {
+    #header-container{
+        height: 265px;
+    }
+} 
+
+
+
+@media 
+only screen and (max-height: 675px) {
+    #header-container{
+        height: 220px;
+    }
+} 
+
+
 
 
 
