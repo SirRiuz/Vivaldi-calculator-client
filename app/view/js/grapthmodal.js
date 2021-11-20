@@ -15,18 +15,22 @@ class ModalController {
   }
   
   openGraphModal(){
-    document.getElementById('canvas-3d-preview').style.display = 'none'
+    document.getElementById('canvas-3d-preview').style.backgroundImage = 'none'
     document.getElementById('show').style.display = 'none'
     document.getElementById('result').textContent = '\\,'
-    //document.getElementById('operation').textContent = '\\,'
-    
-    
+
+    document.getElementById('canvas-3d-preview').innerHTML = `<body>
+    <div class="loading-spinner"></div>
+  </body>`
+    document.getElementById('grapth-canvas-modal-3d').style.display = 'block'
+
+        
     onGrapth3d({
       latex:document.getElementById('operation').value,
       mode:this.modeRender
     },(e) => {
 
-
+      document.getElementById('canvas-3d-preview').innerHTML = ''
       document.getElementById('canvas-3d-preview').style.display = 'block'
       document.getElementById('result').innerText = ''  
 

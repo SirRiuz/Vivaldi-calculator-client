@@ -231,25 +231,18 @@ function onCalculate() {
       //onRequest('','eval')
       document.getElementById('operation').innerText = document.getElementById('operation').value
 
-
       onRequest({
         latex:document.getElementById('operation').textContent,
         operation:getOperation(),
         mode:document.getElementById('btn-deg-mode').attributes.mode.value
       },(e) => {
-        if(e.datblocka.status == 'ok') {
-          document.getElementById('show').style.display = 'none'
+        if(e.status != 'error'){
+          console.log(e.data.latex)
           document.getElementById('operation').innerText = e.data.latex
-          document.getElementById('result').style.display = 'none'
-        } else {
-          if(e.data.result['type-error'] == 'syntax.error') {
-            document.getElementById('operation').innerText = 'Error_en_la_sintaxis'
-            document.getElementById('result').innerText = ''          }
-
-          if(e.data.result['type-error'] == 'zero.division') {
-            document.getElementById('operation').innerHTML = 'No es posible dividir entre 0'
-            document.getElementById('result').innerText = ''
-          }
+          document.getElementById('result').innerText = `\\, \\, `
+          document.getElementById('show').style.display = 'none'
+        } else{
+          document.getElementById('operation').innerText = 'No\\,\\,se\\,\\,puede\\,\\,resolver'
         }
       })
     }
