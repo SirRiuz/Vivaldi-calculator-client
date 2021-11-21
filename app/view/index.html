@@ -23,6 +23,14 @@
 </head>
 <body>
 
+
+    <div id="load-modal">
+        <div id="screen"></div>
+        <div id="modal-load">
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
     <div id="tutorial-modal-container">
         <div id="tutorial-screen"></div>
         <div id="tutorial-modal">
@@ -72,7 +80,7 @@
                 <span>Simplificar</span>
             </div>
 
-            <div class="item-operation-modal" action="factor">
+            <div class="item-operation-modal" action="eval">
                 <span>Factorizar</span>
             </div>
 
@@ -105,7 +113,7 @@
         </div>
         <div id="container-text">
             <div><math-field id="operation" style="font-size: 25px;z-index: 999; padding: 8px;border-radius:5px"></math-field></div>
-            <div><math-field id="result" style="font-size: 25px;"></math-field></div>
+            <div><math-field id="result"></math-field></div>
         </div>
     </div>
 
@@ -349,15 +357,15 @@
                                     <path d="M26.5834 11.0827H17.4167V20.2494H26.5834V11.0827Z" stroke="#919191" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
                                 </svg>    
                             </button>
-                            <button class="btn-item" renderValue="_{\placeholder{⬚}}C_{\placeholder{⬚}}">       
-                                <svg renderValue="_{\placeholder{⬚}}C_{\placeholder{⬚}}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button class="btn-item" renderValue="_\placeholder{⬚}C_\placeholder{⬚}">       
+                                <svg renderValue="_\placeholder{⬚}C_\placeholder{⬚}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M25.9427 14.2714C25.751 14.1408 25.5294 14.0069 25.2781 13.8694C25.0335 13.7319 24.7624 13.6083 24.4648 13.4984C24.1673 13.3884 23.84 13.299 23.483 13.2303C23.1325 13.1616 22.7556 13.1272 22.3522 13.1272C21.3604 13.1272 20.4645 13.3094 19.6644 13.6735C18.871 14.0378 18.1965 14.5394 17.6411 15.1786C17.0856 15.8176 16.6559 16.5702 16.3517 17.436C16.0542 18.2951 15.9054 19.2262 15.9054 20.2296C15.9054 21.0473 16.0145 21.7724 16.2328 22.4045C16.4509 23.0299 16.7617 23.5591 17.165 23.9921C17.5684 24.4182 18.051 24.741 18.6131 24.9611C19.1752 25.181 19.7966 25.2909 20.4777 25.2909C20.9141 25.2909 21.3108 25.2668 21.6679 25.2187C22.025 25.1637 22.3555 25.0915 22.6597 25.0022C22.9639 24.9061 23.2483 24.796 23.5127 24.6724C23.7838 24.5418 24.0449 24.4044 24.2963 24.2601L23.9094 26.0743C23.3738 26.3286 22.7985 26.521 22.1837 26.6516C21.5754 26.789 20.8909 26.8578 20.1306 26.8578C19.2314 26.8578 18.4114 26.7031 17.6709 26.3938C16.937 26.0846 16.3088 25.6482 15.7865 25.0847C15.2707 24.5143 14.8707 23.8306 14.5864 23.0333C14.302 22.2362 14.1598 21.3497 14.1598 20.3738C14.1598 19.082 14.3549 17.8965 14.745 16.8175C15.1417 15.7386 15.7004 14.8109 16.4212 14.0344C17.1485 13.2578 18.018 12.6531 19.0297 12.2201C20.0479 11.7872 21.1753 11.5707 22.4118 11.5707C23.2581 11.5707 24.0053 11.6669 24.6533 11.8593C25.3079 12.0449 25.86 12.2579 26.3096 12.4984L25.9427 14.2714Z" fill="black"/>
                                     <path d="M11.4922 22.0618H4.38281V29.4507H11.4922V22.0618Z" stroke="#919191" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
                                     <path d="M34.2268 22.0618H27.1174V29.4507H34.2268V22.0618Z" stroke="#919191" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
                                 </svg>
                             </button>
-                            <button class="btn-item" renderValue="_{\placeholder{⬚}}P_{\placeholder{⬚}}">
-                                <svg renderValue="_{\placeholder{⬚}}P_{\placeholder{⬚}}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button class="btn-item" renderValue="_\placeholder{⬚}P_\placeholder{⬚}">
+                                <svg renderValue="_\placeholder{⬚}P_\placeholder{⬚}" width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M26.2888 15.7043C26.2888 16.4327 26.1699 17.1199 25.9317 17.7659C25.6937 18.405 25.33 18.965 24.8408 19.4461C24.3581 19.9272 23.7432 20.3086 22.996 20.5903C22.2488 20.8652 21.3695 21.0027 20.3578 21.0027H18.1956L17.065 26.6H15.3589L18.3641 11.8181H22.0438C22.8043 11.8181 23.4522 11.9281 23.9878 12.148C24.53 12.361 24.9698 12.6496 25.3069 13.0139C25.6508 13.3712 25.8987 13.7835 26.0508 14.2509C26.2095 14.7182 26.2888 15.2027 26.2888 15.7043ZM24.5333 15.8589C24.5333 15.4878 24.4704 15.1511 24.3449 14.8488C24.2258 14.5394 24.0473 14.2784 23.8093 14.0653C23.5713 13.8454 23.2738 13.677 22.9167 13.5602C22.5661 13.4434 22.1596 13.385 21.6967 13.385H19.7627L18.5228 19.4461H20.5165C21.2174 19.4461 21.8191 19.3568 22.3215 19.1781C22.8307 18.9925 23.2473 18.7417 23.5713 18.4257C23.9019 18.1027 24.1432 17.7247 24.2953 17.2918C24.454 16.8519 24.5333 16.3743 24.5333 15.8589Z" fill="black"/>
                                     <path d="M11.4922 22.0618H4.38281V29.4507H11.4922V22.0618Z" stroke="#919191" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>
                                     <path d="M34.2268 22.0618H27.1174V29.4507H34.2268V22.0618Z" stroke="#919191" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="1.67 0.5"/>

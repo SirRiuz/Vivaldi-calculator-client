@@ -1,40 +1,7 @@
 
 
-
-function showResult(e) {
-  if(e.status != 'error') {
-    if(e.data.showSteps) {
-      document.getElementById('show').style.display = 'block'
-      document.getElementById('show-icon').setAttribute('mode',e.data.stepMode)
-    }
-    document.getElementById('result').innerText = `=${e.data.latex}`
-
-    console.log(e.data.latex.length)
-
-    if(window.screen.availWidth >= 1000){
-      if(e.data.latex.length >= 80){
-        document.getElementById('result').style.fontSize = '18px'
-      }
-    }
-
-    if(window.screen.availWidth <= 375){
-      console.log(e.data.latex)
-      document.getElementById('result').style.fontSize = '22px'
-      if(e.data.latex.length >= 75){
-        document.getElementById('result').style.fontSize = '15px'
-      }
-    }
-  } else {
-    document.getElementById('result').innerText = `\\, \\, `
-    document.getElementById('show').style.display = 'none'
-  }
-}
-
-
-
-
 function onClickKeyButton() {
-  document.getElementById('operation').addEventListener('keyup',(e) => {
+  document.getElementById('operation').addEventListener('keypress',(e) => {
     if(!document.getElementById('operation').value == '') {
       onRequest({
         latex:document.getElementById('operation').value,
@@ -119,15 +86,6 @@ function onClickButton() {
           document.getElementById('operation').executeCommand(['insert', e.target.textContent]);
           //document.getElementById('operation').innerText = document.getElementById('operation').value + e.target.textContent
         }
-
-
-        onRequest({
-          latex:document.getElementById('operation').value,
-          operation:getOperation(),
-          mode:document.getElementById('btn-deg-mode').attributes.mode.value
-        },(e) => {
-          showResult(e)
-        })
       })
     }
   }
@@ -150,26 +108,6 @@ function onClickButton() {
           document.getElementById('operation').executeCommand(['insert', e.target.textContent]);
           //document.getElementById('operation').innerText = document.getElementById('operation').value + e.target.textContent
         }
-
-
-        onRequest({
-          latex:document.getElementById('operation').value,
-          operation:getOperation(),
-          mode:document.getElementById('btn-deg-mode').attributes.mode.value
-        },(e) => {
-
-          if(e.status != 'error') {
-            if(e.data.showSteps) {
-              document.getElementById('show').style.display = 'block'
-              document.getElementById('show-icon').setAttribute('mode',e.data.stepMode)
-            }
-            document.getElementById('result').innerText = `=${e.data.latex}`
-          } else {
-            document.getElementById('result').innerText = `\\, \\, `
-            document.getElementById('show').style.display = 'none'
-          }
-        })
-
       })
     }
   }
@@ -228,7 +166,9 @@ function onCalculate() {
     if(timeDifference >= 400) {
       openModal(document.getElementById('modal-container'))
     } else {
-      //onRequest('','eval')
+
+      document.getElementById('load-modal').style.display = 'block'
+      document.getElementById('show').style.display = 'none'
       document.getElementById('operation').innerText = document.getElementById('operation').value
 
       onRequest({
@@ -236,12 +176,16 @@ function onCalculate() {
         operation:getOperation(),
         mode:document.getElementById('btn-deg-mode').attributes.mode.value
       },(e) => {
+        document.getElementById('load-modal').style.display = 'none'
+
         if(e.status != 'error'){
-          console.log(e.data.latex)
-          document.getElementById('operation').innerText = e.data.latex
-          document.getElementById('result').innerText = `\\, \\, `
-          document.getElementById('show').style.display = 'none'
+          if(e.data.showSteps != undefined && e.data.showSteps){
+            document.getElementById('show').style.display = 'block'
+            document.getElementById('show-icon').setAttribute('mode',e.data.stepMode)
+          }
+          document.getElementById('result').innerText = `=\\,\\,${e.data.latex}`
         } else{
+          document.getElementById('result').innerText = `\\,\\,`
           document.getElementById('operation').innerText = 'No\\,\\,se\\,\\,puede\\,\\,resolver'
         }
       })
@@ -253,6 +197,7 @@ function onCalculate() {
 
 function onNavigation() {
   var results = document.getElementsByClassName('btn-item-nav')
+
   
   for(var x = 0;x<results.length;x++){
     results[x].addEventListener('click',(e) => {
@@ -300,7 +245,7 @@ onCalculate()
 onClickButton()
 onDelete()
 onNavigation()
-onClickKeyButton()
+//onClickKeyButton()
 
 
 

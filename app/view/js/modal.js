@@ -38,22 +38,29 @@ function onClickButonItem(ctx) {
         if(e.target.attributes.action) {
           onCloseModal(ctx)
           console.log(document.getElementById('operation').value)
-
+          document.getElementById('load-modal').style.display = 'block'
+          
           onRequest({
             latex:document.getElementById('operation').value,
             operation:e.target.attributes.action.value,
-            mode:'deg'
+            mode:document.getElementById('btn-deg-mode').attributes.mode.value
           },(e) => {
+            console.log(document.getElementById('operation').value)
+            console.log(e)
+            document.getElementById('load-modal').style.display = 'none'
             if(e.data.status == 'ok') {
               console.log(e)
               document.getElementById('result').innerText = `= ${e.data.latex}`
             } else {
               console.error('Error de sintaxis ...')
+              document.getElementById('operation').innerText= 'Sintax error'
             }
           })
 
 
           if(e.target.attributes.action.value == 'grapth'){
+
+            document.getElementById('load-modal').style.display = 'none'
 
             if(e.target.attributes.mode.value == '3d'){
               new ModalController('3d').openGraphModal()

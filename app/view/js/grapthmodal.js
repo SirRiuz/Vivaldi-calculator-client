@@ -19,10 +19,12 @@ class ModalController {
     document.getElementById('show').style.display = 'none'
     document.getElementById('result').textContent = '\\,'
 
-    document.getElementById('canvas-3d-preview').innerHTML = `<body>
-    <div class="loading-spinner"></div>
-  </body>`
+    document.getElementById('canvas-3d-preview').innerHTML = `<body><div class="loading-spinner"></div> </body>`
     document.getElementById('grapth-canvas-modal-3d').style.display = 'block'
+
+    document.getElementById('canvas-3d-preview').style.display = 'flex'
+    document.getElementById('canvas-3d-preview').style.justifyContent = 'center'
+    document.getElementById('canvas-3d-preview').style.alignItems = 'center'
 
         
     onGrapth3d({
