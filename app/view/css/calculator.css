@@ -10,6 +10,7 @@
     justify-content: center;
     align-content: center;
     gap: 10px;
+    margin-bottom: 6px;
 }
 
 
@@ -26,7 +27,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Ubuntu', sans-serif;    background: rgba(220, 220, 220,.90);
+    font-family: 'Ubuntu', sans-serif;
+    background: rgba(220, 220, 220,.90);
     border: solid 0px;
     margin-right: 10px;
     width: 75px;
@@ -292,7 +294,7 @@ button {
 
 
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 490px) {
     svg{
         width: 30px;
         height: 30px;
@@ -302,69 +304,81 @@ button {
         padding-top: 5px;
     }
     #root-container{
-        gap: 2px;
+        gap: 2.5px;
     }
     .btn-item {
-        width: 38px;
+        width: 39px;
+        height: 41px;
     }
 
     #btn-item-back{
-        width: 38px;
+        width: 39px;
+        height: 41px;
+        background: rgba(220, 220, 220,.70);
     }
     .btn-item-nav{
-        width: 38px;
+        width: 39px;
+        height: 41px;
+        background: rgba(220, 220, 220,.70);
     }
     .btn-item-opacity{
-        width: 38px;
+        width: 39px;
+        height: 41px;
     }
     #btn-item-opacity-equals{
-        width: 38px;
+        width: 39px;
+        height: 41px;
+        background: rgba(220, 220, 220,.70);
     }
     #clear-all{
-        width: 38px;
+        width: 39px;
+        height: 41px;
+        background: rgba(220, 220, 220,.70);
     }
     #btn-deg-mode{
-        width: 38px;
+        width: 39px;
+        height: 41px;
     }
 }
 
 
 
 @media 
-only screen and (max-width: 325px) {
+only screen and (max-width: 380px) {
+
     #generic-buttons-container{
         margin-top: 5px;
         padding-top: 0px;
     }
     .btn-item-opacity{
-        width: 31px;
-        height: 35px;
+        width: 35px;
+        height: 39px;
     }
 
     .btn-item {
-        width: 31px;
-        height: 35px;
+        width: 35px;
+        height: 39px;
     }
 
     #clear-all{
-        width: 31px;
-        height: 35px;
+        width: 35px;
+        height: 39px;
     }
 
     #btn-item-back{
-        width: 31px;
-        height: 35px;
+        width: 35px;
+        height: 39px;
     }
     #btn-item-opacity-equals{
-        width: 31px;
-        height: 35px;
+        width: 35px;
+        height: 39px;
     }
     .btn-item-nav{
-        width: 31px;
-        height: 35px;
+        width: 35px;
+        height: 39px;
     }
     #btn-deg-mode{
-        width: 31px;
-        height: 35px;
+        width: 35px;
+        height: 39px;
     }
 }

@@ -31,6 +31,9 @@ only screen and (max-width: 375px) {
     #header-container{
         height: 180px;
     }
+    #result{
+        font-size: 15px;
+    }
 } 
 
 
@@ -98,7 +101,6 @@ only screen and (max-height: 675px) {
 
 
 #result{
-    font-size: 20px;
     opacity: .85;
 }
 

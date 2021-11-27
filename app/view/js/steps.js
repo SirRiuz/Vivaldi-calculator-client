@@ -16,7 +16,7 @@ function onShow() {
     var mode = undefined
     if (e.target.attributes.mode.value == 'dif'){ mode = 'dif' }
     
-    document.getElementById('step-body').innerHTML = 'Load'
+    document.getElementById('step-body').innerHTML = '<div id="load-picker"><div class="loading-spinner"></div></div>'
 
     onGetSteps({
       mode:mode,
@@ -27,7 +27,7 @@ function onShow() {
         console.dir(JSON.stringify(e, null, "    "))
 
         var titleHtml = katex.renderToString(e.title, { throwOnError: false });
-        document.getElementById('step-body').innerHTML += `<h1>${titleHtml}</h1><hr>`
+        document.getElementById('step-body').innerHTML += `<h1>${titleHtml}</h1> <hr>`
 
         for(var x = 0;x<e.data.length;x++){
           document.getElementById('step-body').innerHTML += `
@@ -39,15 +39,20 @@ function onShow() {
 
           for(var y=0; y < e.data[x].steps.length;y++){
             var html = katex.renderToString(e.data[x].steps[y], { throwOnError: false });
-            document.getElementById(`item-${x}`).innerHTML += `<div>${html}</div>`
+            document.getElementById(`item-${x}`).innerHTML += `<div id="item">${html}</div>`
           }
         }
 
 
       } else {
-        console.log(e)
-        document.getElementById('step-body').innerHTML = 'Error<br/>'
-        document.getElementById('step-body').innerHTML += e['type-error']
+
+        document.getElementById('step-body').innerHTML += `
+          <div id="error-container">
+            <strong id="title-error">:(</strong></br></br></br>
+            No pudimos obtener el procedimiento de</br>esta operación</br></br>
+            <strong id="type-error">#${e['type-error']}</strong>
+          </div>
+        `
       }
     })
     document.getElementById('modal-step').style.display = 'block'
