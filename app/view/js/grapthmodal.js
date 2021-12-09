@@ -48,7 +48,7 @@ class ModalController {
       } else {
         document.getElementById('grapth-canvas-modal-3d').style.display = 'none'
         document.getElementById('result').innerText = `\\,\\,`
-        document.getElementById('operation').innerText = 'Error\\,\\,de\\,\\,conexión'
+        document.getElementById('operation').innerText = 'Error\\,\\,en\\,\\,el\\,\\,servidor'
       }
     })
 
