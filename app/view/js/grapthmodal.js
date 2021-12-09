@@ -32,25 +32,29 @@ class ModalController {
       mode:this.modeRender
     },(e) => {
 
-      document.getElementById('canvas-3d-preview').innerHTML = ''
-      document.getElementById('canvas-3d-preview').style.display = 'block'
-      document.getElementById('result').innerText = ''  
-
-      var el = document.getElementById('canvas-3d-preview')
-      el.style.backgroundImage = `url(data:image/png;base64,${e.baseCode})`
-      el.style.backgroundRepeat = 'no-repeat'
-      el.style.backgroundPosition = 'center'
-      el.style.backgroundSize = 'contain'
-
-      document.getElementById('grapth-canvas-modal-3d').style.display = 'block'
-
+      console.log('e ->',e)
+      if(e != null){
+        document.getElementById('canvas-3d-preview').innerHTML = ''
+        document.getElementById('canvas-3d-preview').style.display = 'block'
+        document.getElementById('result').innerText = ''  
+  
+        var el = document.getElementById('canvas-3d-preview')
+        el.style.backgroundImage = `url(data:image/png;base64,${e.baseCode})`
+        el.style.backgroundRepeat = 'no-repeat'
+        el.style.backgroundPosition = 'center'
+        el.style.backgroundSize = 'contain'
+  
+        document.getElementById('grapth-canvas-modal-3d').style.display = 'block'   
+      } else {
+        document.getElementById('grapth-canvas-modal-3d').style.display = 'none'
+        document.getElementById('result').innerText = `\\,\\,`
+        document.getElementById('operation').innerText = 'Error\\,\\,de\\,\\,conexión'
+      }
     })
 
   }
 
 }
-
-
 
 
 

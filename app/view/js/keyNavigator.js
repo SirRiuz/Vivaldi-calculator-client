@@ -177,16 +177,22 @@ function onCalculate() {
         mode:document.getElementById('btn-deg-mode').attributes.mode.value
       },(e) => {
         document.getElementById('load-modal').style.display = 'none'
+        
 
-        if(e.status != 'error'){
-          if(e.data.showSteps != undefined && e.data.showSteps){
-            document.getElementById('show').style.display = 'block'
-            document.getElementById('show-icon').setAttribute('mode',e.data.stepMode)
+        if(e != null){
+          if(e.status != 'error'){
+            if(e.data.showSteps != undefined && e.data.showSteps){
+              document.getElementById('show').style.display = 'block'
+              document.getElementById('show-icon').setAttribute('mode',e.data.stepMode)
+            }
+            document.getElementById('result').innerText = `=\\,\\,${e.data.latex}`
+          } else{
+            document.getElementById('result').innerText = `\\,\\,`
+            document.getElementById('operation').innerText = 'No\\,\\,se\\,\\,puede\\,\\,resolver'
           }
-          document.getElementById('result').innerText = `=\\,\\,${e.data.latex}`
-        } else{
+        } else {
           document.getElementById('result').innerText = `\\,\\,`
-          document.getElementById('operation').innerText = 'No\\,\\,se\\,\\,puede\\,\\,resolver'
+          document.getElementById('operation').innerText = 'Error\\,\\,de\\,\\,conexión'
         }
       })
     }

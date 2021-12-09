@@ -12,6 +12,7 @@
     background: rgba(0, 0, 0, .65);
     backdrop-filter: blur(8px);
     z-index: 99;
+    cursor: pointer;
 }
 
 

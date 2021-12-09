@@ -15,12 +15,23 @@
     overflow: hidden;
     position: absolute;
     z-index: 9999;
+    cursor: pointer;
+}
+
+#screen-load{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    backdrop-filter: blur(2.5px);
+    background: rgba(0, 0, 0, .19);
+    cursor: pointer;
+
 }
 
 
 @keyframes start_anim {
-    0%   {transform:scale(.5);}
-    50%  {transform:scale(1);}
+    0%   { top: 100px; }
  }
 
 @keyframes end_anim {
@@ -31,7 +42,7 @@
 
 
 #modal {
-    animation: start_anim .5s;
+    animation: start_anim .3s;
 
     transform: translate(-50%,-50%);
     top: 50%;

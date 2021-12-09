@@ -5,6 +5,7 @@ const BASEURL = 'https://vivaldi-api-client.herokuapp.com/'
 
 
 
+
 function onGetSteps(data,callback){
 
   //var url = `${BASEURL}api/v1/steps/?latex=${data.latex.replace('+','%2B')}&mode=${data.mode}`
@@ -59,8 +60,8 @@ function onGrapth3d(data,callback) {
       callback(res)
     })
 
-    .catch(err => { })
-    .catch(err => { })
+    .catch(err => { callback(null) })
+    .catch(err => { callback(null) })
 }
 
 
@@ -90,9 +91,10 @@ function onRequest(data,callback) {
     })
 
     .catch(err => {
-
+      callback(null)
     })
     .catch(err => {
+      callback(null)
     })
 }
 
@@ -124,5 +126,24 @@ function onParseLatex(latexEpresion,callback) {
       console.Console('Server error')
     })
 }
+
+
+
+function onStartServer(){
+
+  /*
+    Esta funcion envia una peticion inicial
+    al servidor, esto con el fin de iniciarlo
+    si esta apadado
+  */
+
+  fetch(`${BASEURL}?m=start`)
+    .then(() => { console.info('Send request ...') })
+    .catch(() => { console.error('Error to request') })
+}
+
+
+onStartServer()
+
 
 

@@ -3,10 +3,12 @@
 
 
 function onOpenDialog() {
-  var isShow = window.location.search.split('=')[1]
-
-  if(isShow != undefined && isShow == 'true'){
+  //var isShow = window.location.search.split('=')[1]
+  var isOpen = localStorage.getItem('isOpen')
+  console.log(isOpen)
+  if(isOpen == null){
     document.getElementById('tutorial-modal-container').style.display = 'block'
+    localStorage.setItem('isOpen',true)
   }
 }
 
