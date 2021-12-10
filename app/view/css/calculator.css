@@ -382,3 +382,45 @@ only screen and (max-width: 380px) {
         height: 39px;
     }
 }
+
+
+
+
+@media 
+only screen and (max-height: 570px) {
+    #generic-buttons-container{
+        margin-top: 5px;
+        padding-top: 0px;
+    }
+    .btn-item-opacity{
+        width: 30px;
+        height: 35px;
+    }
+
+    .btn-item {
+        width: 30px;
+        height: 35px;
+    }
+
+    #clear-all{
+        width: 30px;
+        height: 35px;
+    }
+
+    #btn-item-back{
+        width: 30px;
+        height: 35px;
+    }
+    #btn-item-opacity-equals{
+        width: 30px;
+        height: 35px;
+    }
+    .btn-item-nav{
+        width: 30px;
+        height: 35px;
+    }
+    #btn-deg-mode{
+        width: 30px;
+        height: 35px;
+    }
+}

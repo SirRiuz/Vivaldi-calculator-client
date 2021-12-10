@@ -114,3 +114,32 @@ only screen and (max-height: 675px) {
     margin-left:10px ;
 }
 
+
+
+/* Overflor result */
+
+#result-container{
+    width: 290px;
+    overflow-x: scroll;
+    text-overflow: clip;
+    padding-bottom: 15px;
+    overflow-y: hidden;
+    z-index: 999;
+}
+
+
+#result-container::-webkit-scrollbar {
+    height: 5px;
+    cursor: pointer;
+}
+
+
+#result-container::-webkit-scrollbar-thumb{
+    background-color: #B8B8B8;
+    cursor: pointer;
+}
+
+#result-container::-webkit-scrollbar-track {
+    background: white
+}
+

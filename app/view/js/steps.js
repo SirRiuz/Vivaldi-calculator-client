@@ -37,16 +37,16 @@ function onGetDataSteps(count=0){
 
     if(e.status == 'ok'){
       document.getElementById('step-body').innerHTML = ''
-      document.getElementById('step-body').innerHTML += `<h1>${
+      document.getElementById('step-body').innerHTML += `<div class="title">${
         katex.renderToString(e.title, { throwOnError: false })
-      }</h1> <hr>`
+      }</div>`
 
 
       for(var x = 0;x<e.data.length;x++){
         document.getElementById('step-body').innerHTML += `
           <div id="item-${x}" class="item-container"></div>`
         if(e.data[x].title != null){
-          document.getElementById(`item-${x}`).innerHTML += `<div id="title">${
+          document.getElementById(`item-${x}`).innerHTML += `<div class="step-title">${
             katex.renderToString(e.data[x].title, { throwOnError: false })
           }</div>`
         }
