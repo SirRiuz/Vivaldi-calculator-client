@@ -353,16 +353,19 @@ only screen and (max-width: 380px) {
     .btn-item-opacity{
         width: 35px;
         height: 39px;
+        font-size: 13px;
     }
 
     .btn-item {
         width: 35px;
         height: 39px;
+        font-size: 13px;
     }
 
     #clear-all{
         width: 35px;
         height: 39px;
+        font-size: 13px;
     }
 
     #btn-item-back{
@@ -380,6 +383,7 @@ only screen and (max-width: 380px) {
     #btn-deg-mode{
         width: 35px;
         height: 39px;
+        font-size: 13px;
     }
 }
 

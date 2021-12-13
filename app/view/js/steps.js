@@ -21,9 +21,8 @@ function onShow() {
 
 function onGetDataSteps(count=0){
 
-  var mode = ''
-
-  if(document.getElementById('show-icon').attributes.mode.value == 'dif'){ mode = 'dif'}
+  //var mode = ''
+  //if(document.getElementById('show-icon').attributes.mode.value == 'dif'){ mode = 'dif'}
 
   if(count == 2){ return null }
 
@@ -31,7 +30,7 @@ function onGetDataSteps(count=0){
   console.log(document.getElementById('operation').value)
 
   onGetSteps({
-    mode:mode,
+    mode:document.getElementById('show-icon').attributes.mode.value,
     latex:document.getElementById('operation').value
   },(e) => {
 
@@ -43,6 +42,7 @@ function onGetDataSteps(count=0){
 
 
       for(var x = 0;x<e.data.length;x++){
+
         document.getElementById('step-body').innerHTML += `
           <div id="item-${x}" class="item-container"></div>`
         if(e.data[x].title != null){
