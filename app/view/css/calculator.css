@@ -388,6 +388,45 @@ only screen and (max-width: 380px) {
 }
 
 
+@media 
+only screen and (max-width: 330px) {
+    .btn-item-opacity{
+        width: 30px;
+        height: 35px;
+        font-size: 13px;
+    }
+
+    .btn-item {
+        width: 30px;
+        height: 35px;
+        font-size: 13px;
+    }
+
+    #clear-all{
+        width: 30px;
+        height: 35px;
+        font-size: 13px;
+    }
+
+    #btn-item-back{
+        width: 30px;
+        height: 35px;
+    }
+    #btn-item-opacity-equals{
+        width: 30px;
+        height: 35px;
+    }
+    .btn-item-nav{
+        width: 30px;
+        height: 35px;
+    }
+    #btn-deg-mode{
+        width: 30px;
+        height: 35px;
+        font-size: 13px;
+    }
+}
+
 
 
 @media 
