@@ -18,6 +18,16 @@
 }
 
 
+#result-container{
+    width: 490px;
+    overflow-x: scroll;
+    text-overflow: clip;
+    padding-bottom: 15px;
+    overflow-y: hidden;
+    z-index: 999;
+}
+
+
 @media 
 only screen and (max-width: 650px) {
     #header-container{
@@ -34,8 +44,16 @@ only screen and (max-width: 375px) {
     #result{
         font-size: 15px;
     }
+    
 } 
 
+
+@media 
+only screen and (max-width: 450px) {
+    #result-container{
+        width: 290px;
+    }
+}
 
 
 @media 
@@ -126,18 +144,11 @@ only screen and (max-height: 645px) {
 
 /* Overflor result */
 
-#result-container{
-    width: 290px;
-    overflow-x: scroll;
-    text-overflow: clip;
-    padding-bottom: 15px;
-    overflow-y: hidden;
-    z-index: 999;
-}
+
 
 
 #result-container::-webkit-scrollbar {
-    height: 5px;
+    height: 6px;
     cursor: pointer;
 }
 
@@ -148,6 +159,6 @@ only screen and (max-height: 645px) {
 }
 
 #result-container::-webkit-scrollbar-track {
-    background: white
+    background:white
 }
 
