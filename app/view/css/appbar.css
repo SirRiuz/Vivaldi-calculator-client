@@ -22,9 +22,8 @@
     width: 490px;
     overflow-x: scroll;
     text-overflow: clip;
-    padding-bottom: 15px;
     overflow-y: hidden;
-    z-index: 999;
+    z-index: 98;
 }
 
 
@@ -148,8 +147,9 @@ only screen and (max-height: 645px) {
 
 
 #result-container::-webkit-scrollbar {
-    height: 6px;
+    height: 5px;
     cursor: pointer;
+    background-color: white;
 }
 
 
