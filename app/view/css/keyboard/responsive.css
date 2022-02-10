@@ -1,0 +1,290 @@
+
+
+
+
+@media (max-width: 705px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back {
+        width: 70px;
+    }
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 70px;
+    }
+}
+
+@media (max-width: 655px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back {
+        width: 60px;
+    }
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 60px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back {
+        width: 58px;
+    }
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 58px;
+    }
+}
+
+
+@media (max-width: 590px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back {
+        width: 55px;
+    }
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 55px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back , #btn-nav {
+        width: 60px;
+        margin-right: 12px;
+        margin-bottom: 11px;
+    }
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 60px;
+        height: 50px;
+        margin-right: 12px;
+        margin-bottom: 11px;
+    }
+
+    #after-buttons-container,#item-container-options { display: none; }
+
+
+    #nav-buttons-container {
+        display: block;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    #generic-buttons-container{
+        padding-top: 14px;
+    }
+}
+
+
+@media (max-width: 415px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back , #btn-nav {
+        width: 60px;
+        height: 45px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 60px;
+        height: 45px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    #after-buttons-container,#item-container-options { display: none; }
+
+
+    #nav-buttons-container {
+        display: block;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    #generic-buttons-container{
+        padding-top: 10px;
+    }
+}
+
+
+@media (max-width: 395px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back , #btn-nav {
+        width: 60px;
+        height: 46px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 60px;
+        height: 46px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+@media (max-width: 375px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back , #btn-nav {
+        width: 60px;
+        height: 45px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 60px;
+        height: 45px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    #generic-buttons-container{
+        padding-top: 10px;
+    }
+
+}
+
+@media (max-width: 320px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back , #btn-nav {
+        width: 50px;
+        height: 35px;
+        margin-right: 9px;
+        margin-bottom: 9px;
+    }
+
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 50px;
+        height: 35px;
+        margin-right: 9px;
+        margin-bottom: 9px;
+    }
+
+    #generic-buttons-container{
+        padding-top: 8px;
+    }
+
+}
+
+
+
+
+
+
+/* max-height */
+
+
+@media (max-height: 750px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back , #btn-nav {
+        width: 60px;
+        height: 50px;
+        margin-right: 12px;
+        margin-bottom: 12px;
+    }
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 60px;
+        height: 50px;
+        margin-right: 12px;
+        margin-bottom: 12px;
+    }
+
+    #generic-buttons-container{ padding-top: 12px; }
+}
+
+@media (max-height: 745px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back , #btn-nav {
+        width: 55px;
+        height: 40px;
+        margin-right: 9px;
+        margin-bottom: 9px;
+    }
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 55px;
+        height: 40px;
+        margin-right: 9px;
+        margin-bottom: 9px;
+    }
+}
+
+
+
+@media (max-height: 736px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back , #btn-nav {
+        width: 60px;
+        height: 45px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 60px;
+        height: 45px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+
+@media (max-height: 670px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back , #btn-nav {
+        width: 55px;
+        height: 40px;
+        margin-right: 10px;
+        margin-bottom: 8px;
+    }
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 55px;
+        height: 40px;
+        margin-right: 10px;
+        margin-bottom: 8px;
+    }
+
+
+    #generic-buttons-container{ padding-top: 9px; }
+}
+
+
+@media (max-height: 650px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back , #btn-nav {
+        width: 55px;
+        height: 39px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 55px;
+        height: 39px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+}
+
+
+
+
+@media (max-height: 570px) {
+    #btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back , #btn-nav {
+        width: 50px;
+        height: 40px;
+        margin-right: 7px;
+        margin-bottom: 7px;
+    }
+
+    .btn-item , #btn-deg-mode , #btn-mode{
+        width: 50px;
+        height: 40px;
+        margin-right: 7px;
+        margin-bottom: 7px;
+    }
+
+    #generic-buttons-container{ padding-top: 6px; }
+
+}

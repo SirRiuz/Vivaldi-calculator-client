@@ -1,0 +1,134 @@
+
+
+#root-container{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+
+#after-buttons-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+#btn-item-opacity-equals , #clear-all ,.btn-item-opacity , .btn-item-nav , #btn-item-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    background: rgba(220, 220, 220,.90);
+    border: solid 0px;
+    margin-right: 10px;
+    width: 75px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 3px rgba(220, 220, 220,.95);
+}
+
+
+.btn-item , #btn-deg-mode , #btn-mode , #btn-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+    background: #FFFFFF;
+    border: solid 0px;
+    margin-right: 7px;
+    width: 75px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 3px rgba(220, 220, 220,.95);
+}
+
+
+#item-container-options , #nav-buttons-container{
+    display: flex;
+    justify-content: flex-start;
+}
+
+#item-container{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+#indicator-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+#indicator {
+    margin-top: 15px;
+    background: black;
+    height: 10px;
+    width: 70px;
+    opacity:.08;
+    border-radius: 100px;
+}
+
+#buttons-functions-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#generic-buttons-container{
+    padding-top: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#buttons-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 230px;
+}
+
+
+button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+#nav-buttons-container{ display: none; }
+
+
+#indicator-tab{
+    margin-top: 1px;
+    width: 25px;
+    height: 3.5px;
+    border-radius: 100px;
+    background: #c3c3c3;
+}

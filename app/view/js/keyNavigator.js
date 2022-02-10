@@ -222,27 +222,101 @@ function onNavigation() {
 
 
 function onDelete(){
-  
-  var el = document.getElementById('btn-item-back')
-  var clearAll = document.getElementById('clear-all')
-
-  el.addEventListener('click',() => {
+  document.getElementById('btn-item-back').addEventListener('click', _ => {
     document.getElementById('operation').focus()
     document.getElementById('operation').executeCommand('deleteBackward')
     document.getElementById('result').innerText = `\\, \\, `
     document.getElementById('show').style.display = 'none'
   })
+}
 
 
-  clearAll.addEventListener('click',() => {
-    document.getElementById('operation').focus()
-    document.getElementById('operation').value = ''
-    document.getElementById('result').value = ''
-    document.getElementById('show').style.display = 'none'
-  })
+
+function clearAll(){
+  document.getElementById('operation').focus()
+  document.getElementById('operation').value = ''
+  document.getElementById('result').value = ''
+  document.getElementById('show').style.display = 'none'
+}
 
 
+
+
+function onClickTabButton(tabName,element){
+
+
+  // Se encarga de cambiar el indicador de tab segun el boton
+  // que precionemos
+
+
+  var el = document.getElementById('nav-buttons-container')
+  var tabCtx = null
+
+  for(var x = 0;x<el.children.length;x++) {
+    el.children[x].attributes['focus'].value = 'false'
+    el.children[x].innerHTML = tabs[x]['svg']
+  }
+
+  element.attributes['focus'].value = 'true'
+
+  for(var x = 0;x<el.children.length;x++) {
+    if(el.children[x].attributes['focus'].value == 'true'){
+      el.children[x].innerHTML = `<div>${tabs[x]['svg']}</div><div id="indicator-tab"></div>`
+      tabCtx = {
+        'ctx':tabs[x],
+        'index':x
+      }
+      break
+    }
+  }
+
+
+  const fragmentsContainers = document.getElementsByClassName('tab-fragment-container')
+
+  for(var x=0;x<fragmentsContainers.length;x++){
+    for(var y=0;y<fragmentsContainers[x].children.length;y++){
+
+      fragmentsContainers[x].children[y].setAttribute('onClick','')
+      
+      if(tabCtx.ctx.buttons[x][y].id != undefined){
+        fragmentsContainers[x].children[y].setAttribute('class',tabCtx.ctx.buttons[x][y].id)
+        fragmentsContainers[x].children[y].setAttribute('id',tabCtx.ctx.buttons[x][y].id)
+        fragmentsContainers[x].children[y].setAttribute('renderValue',tabCtx.ctx.buttons[x][y].renderItem)
+        fragmentsContainers[x].children[y].setAttribute('onClick',tabCtx.ctx.buttons[x][y].onClick)
+      }
+
+      if(tabCtx.ctx.buttons[x][y].color != undefined){
+        fragmentsContainers[x].children[y].style.background = tabCtx.ctx.buttons[x][y].color
+      }
+      
+      if(fragmentsContainers[x].children[y].attributes['renderValue'] != undefined){
+        fragmentsContainers[x].children[y].attributes['renderValue'].value = tabCtx.ctx.buttons[x][y].renderItem
+      }
   
+      fragmentsContainers[x].children[y].innerHTML = tabCtx.ctx.buttons[x][y].svg
+
+    }
+  }
+
+}
+
+
+function navController() {
+
+  const items = document.getElementsByClassName('btn-nav')
+
+  for(var x = 0;x<items.length; x++){
+    items[x].addEventListener('click',(e) => {
+      if(e.target.localName == 'svg'){
+        onClickTabButton(
+          e.target.parentElement.attributes[2].value,
+          e.target.parentElement
+        )
+      } else {
+        onClickTabButton(e.target.attributes[2].value,e.target)
+      }
+    })
+  }
 }
 
 
@@ -251,6 +325,7 @@ onCalculate()
 onClickButton()
 onDelete()
 onNavigation()
+navController()
 //onClickKeyButton()
 
 
