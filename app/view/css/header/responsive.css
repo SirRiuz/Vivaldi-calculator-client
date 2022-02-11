@@ -1,0 +1,35 @@
+
+
+@media (max-height:825px){
+    #header-container{
+        height: 245px;
+    }
+}
+
+
+@media (max-height:790px){
+    #header-container{
+        height: 235px;
+    }
+}
+
+@media (max-height:745px){
+    #header-container{
+        height: 195px;
+    }
+}
+
+
+@media (max-height:645px){
+    #header-container{
+        height: 165px;
+    }
+}
+
+
+@media (max-height:575px){
+    #header-container{
+        height: 140px;
+    }
+}
+

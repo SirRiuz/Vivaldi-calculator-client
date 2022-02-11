@@ -10,21 +10,13 @@
     height: 200px;
     background: white;
     width: 100%;
-    box-shadow: 0px 5px 100px rgba(224, 224, 224,.015);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius:10px ;
     top: 0px;
     left: 0px;
+    box-shadow: 0px 2px 5px rgba(220, 220, 220,.2);
 }
 
-
-#result-container{
-    width: 490px;
-    overflow-x: scroll;
-    text-overflow: clip;
-    overflow-y: hidden;
-    z-index: 98;
-}
 
 
 #container-text {
@@ -40,6 +32,7 @@
     display: flex;
     flex-direction:row-reverse;
 }
+
 
 
 #operation{
@@ -61,28 +54,5 @@
     left: 0px;
     margin-top: 36px;
     margin-left:10px ;
-}
-
-
-
-/* Overflor result */
-
-
-
-
-#result-container::-webkit-scrollbar {
-    height: 5px;
-    cursor: pointer;
-    background-color: white;
-}
-
-
-#result-container::-webkit-scrollbar-thumb{
-    background-color: #B8B8B8;
-    cursor: pointer;
-}
-
-#result-container::-webkit-scrollbar-track {
-    background:white
 }
 
