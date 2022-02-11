@@ -1,4 +1,10 @@
 
+@media (max-height:875px){
+    #header-container{
+        height: 305px;
+    }
+}
+
 
 @media (max-height:825px){
     #header-container{
