@@ -2,27 +2,34 @@
 
 @media (max-height:825px){
     #header-container{
-        height: 245px;
+        height: 265px;
     }
 }
 
 
 @media (max-height:790px){
     #header-container{
-        height: 235px;
+        height: 245px;
     }
 }
 
 @media (max-height:745px){
     #header-container{
-        height: 195px;
+        height: 255px;
+    }
+}
+
+@media (max-height:736px){
+    #header-container{
+        height: 205px;
     }
 }
 
 
+
 @media (max-height:645px){
     #header-container{
-        height: 165px;
+        height: 170px;
     }
 }
 
